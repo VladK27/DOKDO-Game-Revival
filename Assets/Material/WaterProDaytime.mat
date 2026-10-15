@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: WaterProDaytime
+  m_Shader: {fileID: 4800000, guid: 03c0549af002110488e9030d03c8bb49, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+      _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 1575afbede98cb249a02ebf1630d81dd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _Fresnel:
+        m_Texture: {fileID: 2800000, guid: b3542ef06c9af06409c453e555c9a1e9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _ReflectionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _ReflectiveColor:
+        m_Texture: {fileID: 2800000, guid: 734fe5ba675b9e14a9b667a8abab9dfd, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+      _RefractionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+      _ReflDistort: 0
+      _RefrDistort: 0
+      _WaveScale: 0.02
+    m_Colors:
+      WaveSpeed: {r: 10, g: 10, b: 10, a: 10}
+      _BumpMap_ST: {r: 1, g: 1, b: 0, a: 0}
+      _Fresnel_ST: {r: 1, g: 1, b: 0, a: 0}
+      _HorizonColor: {r: 0.13575952, g: 0.22810712, b: 0.3810788, a: 0}
+      _MainTex_ST: {r: 1, g: 1, b: 0, a: 0}
+      _ReflectionTex_ST: {r: 1, g: 1, b: 0, a: 0}
+      _ReflectiveColorCube_ST: {r: 1, g: 1, b: 0, a: 0}
+      _ReflectiveColor_ST: {r: 1, g: 1, b: 0, a: 0}
+      _RefrColor: {r: 0, g: 0.44406688, b: 0.46323532, a: 1}
+      _RefractionTex_ST: {r: 1, g: 1, b: 0, a: 0}

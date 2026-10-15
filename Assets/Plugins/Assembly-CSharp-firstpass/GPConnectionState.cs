@@ -1,0 +1,7 @@
+public enum GPConnectionState
+{
+	STATE_UNCONFIGURED = 0,
+	STATE_DISCONNECTED = 1,
+	STATE_CONNECTING = 2,
+	STATE_CONNECTED = 3
+}

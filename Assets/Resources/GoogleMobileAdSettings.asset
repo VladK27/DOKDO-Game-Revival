@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97768b505095fc4d69c0ba99bb54d081, type: 3}
+  m_Name: GoogleMobileAdSettings
+  m_EditorClassIdentifier:
+  IOS_InterstisialsUnitId:
+  IOS_BannersUnitId:
+  IOS_RewardedVideoAdUnitId:
+  Android_InterstisialsUnitId:
+  Android_BannersUnitId:
+  Android_RewardedVideoAdUnitId:
+  WP8_InterstisialsUnitId:
+  WP8_BannersUnitId:
+  WP8_RewardedVideoAdUnitId:
+  IsIOSSettinsOpened: 1
+  IsAndroidSettinsOpened: 1
+  IsWP8SettinsOpened: 1
+  EditorFillRate: 100
+  EditorFillRateIndex: 4
+  IsEditorTestingEnabled: 1
+  IsTestSettinsOpened: 0
+  ShowActions: 0
+  KeepManifestClean: 1
+  TagForChildDirectedTreatment: 0
+  testDevices: []
+  IsKeywordsOpened: 0
+  DefaultKeywords: []

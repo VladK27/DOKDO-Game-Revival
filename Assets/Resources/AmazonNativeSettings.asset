@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1210d71c20d22791d651c458c75959, type: 3}
+  m_Name: AmazonNativeSettings
+  m_EditorClassIdentifier:
+  ToolbarIndex: 0
+  ShowActions: 1
+  ShowStoreParams: 0
+  IsGameCircleEnabled: 0
+  IsBillingEnabled: 0
+  IsAdvertisingEnabled: 0
+  InAppProducts: []
+  AppAPIKey:
+  IsTestMode: 1
+  AdvertisingBannerAlign: 3
+  ShowLeaderboards: 1
+  ShowAchievementsParams: 1
+  AmazonDeveloperConsoleLink: https://goo.gl/EKAKSJ
+  GameCircleDownloadLink: https://db.tt/71Rgmuqw
+  BillingDownloadLink: https://db.tt/vBh98Yvt
+  AdvertisingDownloadLink: https://db.tt/AkvhCMTk

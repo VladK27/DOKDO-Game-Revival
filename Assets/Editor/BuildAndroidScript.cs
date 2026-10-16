@@ -29,8 +29,8 @@ public static class BuildAndroidScript
 			PlayerSettings.Android.forceInternetPermission = true;
 			PlayerSettings.Android.forceSDCardPermission = true;
 
-			EditorUserBuildSettings.development = true;
-			EditorUserBuildSettings.allowDebugging = true;
+			EditorUserBuildSettings.development = false;
+			EditorUserBuildSettings.allowDebugging = false;
 			EditorUserBuildSettings.buildAppBundle = false;
 
 			List<string> scenes = new List<string>();
@@ -51,7 +51,7 @@ public static class BuildAndroidScript
 				scenes = scenes.ToArray(),
 				locationPathName = outPath,
 				target = BuildTarget.Android,
-				options = BuildOptions.Development
+				options = BuildOptions.None
 			};
 
 			BuildReport report = BuildPipeline.BuildPlayer(opts);

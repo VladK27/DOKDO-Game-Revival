@@ -1,277 +1,252 @@
 using System;
 using System.Collections.Generic;
-using IronSourceJSON;
 using UnityEngine;
 
+// ponytail: stub for the IronSource ad SDK. The original AndroidAgent called
+// com.ironsource.unity.androidbridge.AndroidBridge via AndroidJavaClass, which no longer exists
+// in the APK. Ads are disabled: every method is a no-op that logs, signatures preserved so the
+// IronSource facade (IronSource.Agent) keeps working. Availability checks return false so the
+// game never offers fake ad rewards.
 public class AndroidAgent : IronSourceIAgent
 {
-	private static AndroidJavaObject _androidBridge;
-
-	private static readonly string AndroidBridge = "com.ironsource.unity.androidbridge.AndroidBridge";
-
-	private const string REWARD_AMOUNT = "reward_amount";
-
-	private const string REWARD_NAME = "reward_name";
-
-	private const string PLACEMENT_NAME = "placement_name";
-
 	public AndroidAgent()
 	{
-		Debug.Log("AndroidAgent ctr");
+		Debug.Log("[STUB] AndroidAgent ctr (IronSource disabled)");
 	}
 
-	private AndroidJavaObject getBridge()
+	private static void StubCall(string method)
 	{
-		if (_androidBridge == null)
-		{
-			using (AndroidJavaClass androidJavaClass = new AndroidJavaClass(AndroidBridge))
-			{
-				_androidBridge = androidJavaClass.CallStatic<AndroidJavaObject>("getInstance", new object[0]);
-			}
-		}
-		return _androidBridge;
+		Debug.Log("[STUB] IronSource.Agent." + method);
 	}
 
 	public void reportAppStarted()
 	{
-		getBridge().Call("reportAppStarted");
+		StubCall("reportAppStarted");
 	}
 
 	public void onApplicationPause(bool pause)
 	{
-		if (pause)
-		{
-			getBridge().Call("onPause");
-		}
-		else
-		{
-			getBridge().Call("onResume");
-		}
+		StubCall("onApplicationPause");
 	}
 
 	public void setAge(int age)
 	{
-		getBridge().Call("setAge", age);
+		StubCall("setAge");
 	}
 
 	public void setGender(string gender)
 	{
-		getBridge().Call("setGender", gender);
+		StubCall("setGender");
 	}
 
 	public void setMediationSegment(string segment)
 	{
-		getBridge().Call("setMediationSegment", segment);
+		StubCall("setMediationSegment");
 	}
 
 	public string getAdvertiserId()
 	{
-		return getBridge().Call<string>("getAdvertiserId", new object[0]);
+		StubCall("getAdvertiserId");
+		return string.Empty;
 	}
 
 	public void validateIntegration()
 	{
-		getBridge().Call("validateIntegration");
+		StubCall("validateIntegration");
 	}
 
 	public void shouldTrackNetworkState(bool track)
 	{
-		getBridge().Call("shouldTrackNetworkState", track);
+		StubCall("shouldTrackNetworkState");
 	}
 
 	public bool setDynamicUserId(string dynamicUserId)
 	{
-		return getBridge().Call<bool>("setDynamicUserId", new object[1] { dynamicUserId });
+		StubCall("setDynamicUserId");
+		return false;
 	}
 
 	public void setAdaptersDebug(bool enabled)
 	{
-		getBridge().Call("setAdaptersDebug", enabled);
+		StubCall("setAdaptersDebug");
 	}
 
 	public void setUserId(string userId)
 	{
-		getBridge().Call("setUserId", userId);
+		StubCall("setUserId");
 	}
 
 	public void init(string appKey)
 	{
-		getBridge().Call("setPluginData", "Unity", IronSource.pluginVersion(), IronSource.unityVersion());
-		getBridge().Call("init", appKey);
+		StubCall("init");
 	}
 
 	public void init(string appKey, params string[] adUnits)
 	{
-		getBridge().Call("setPluginData", "Unity", IronSource.pluginVersion(), IronSource.unityVersion());
-		getBridge().Call("init", appKey, adUnits);
+		StubCall("init");
 	}
 
 	public void initISDemandOnly(string appKey, params string[] adUnits)
 	{
-		getBridge().Call("setPluginData", "Unity", IronSource.pluginVersion(), IronSource.unityVersion());
-		getBridge().Call("initISDemandOnly", appKey, adUnits);
+		StubCall("initISDemandOnly");
 	}
 
 	public void showRewardedVideo()
 	{
-		getBridge().Call("showRewardedVideo");
+		StubCall("showRewardedVideo");
 	}
 
 	public void showRewardedVideo(string placementName)
 	{
-		getBridge().Call("showRewardedVideo", placementName);
+		StubCall("showRewardedVideo");
 	}
 
 	public bool isRewardedVideoAvailable()
 	{
-		return getBridge().Call<bool>("isRewardedVideoAvailable", new object[0]);
+		StubCall("isRewardedVideoAvailable");
+		return false;
 	}
 
 	public bool isRewardedVideoPlacementCapped(string placementName)
 	{
-		return getBridge().Call<bool>("isRewardedVideoPlacementCapped", new object[1] { placementName });
+		StubCall("isRewardedVideoPlacementCapped");
+		return false;
 	}
 
 	public IronSourcePlacement getPlacementInfo(string placementName)
 	{
-		string text = getBridge().Call<string>("getPlacementInfo", new object[1] { placementName });
-		IronSourcePlacement result = null;
-		if (text != null)
-		{
-			Dictionary<string, object> dictionary = Json.Deserialize(text) as Dictionary<string, object>;
-			string placementName2 = dictionary["placement_name"].ToString();
-			string rewardName = dictionary["reward_name"].ToString();
-			int rewardAmount = Convert.ToInt32(dictionary["reward_amount"].ToString());
-			result = new IronSourcePlacement(placementName2, rewardName, rewardAmount);
-		}
-		return result;
+		StubCall("getPlacementInfo");
+		return null;
 	}
 
 	public void setRewardedVideoServerParams(Dictionary<string, string> parameters)
 	{
-		string text = Json.Serialize(parameters);
-		getBridge().Call("setRewardedVideoServerParams", text);
+		StubCall("setRewardedVideoServerParams");
 	}
 
 	public void clearRewardedVideoServerParams()
 	{
-		getBridge().Call("clearRewardedVideoServerParams");
+		StubCall("clearRewardedVideoServerParams");
 	}
 
 	public void showISDemandOnlyRewardedVideo(string instanceId)
 	{
-		getBridge().Call("showISDemandOnlyRewardedVideo", instanceId);
+		StubCall("showISDemandOnlyRewardedVideo");
 	}
 
 	public void showISDemandOnlyRewardedVideo(string instanceId, string placementName)
 	{
-		getBridge().Call("showISDemandOnlyRewardedVideo", instanceId, placementName);
+		StubCall("showISDemandOnlyRewardedVideo");
 	}
 
 	public bool isISDemandOnlyRewardedVideoAvailable(string instanceId)
 	{
-		return getBridge().Call<bool>("isISDemandOnlyRewardedVideoAvailable", new object[1] { instanceId });
+		StubCall("isISDemandOnlyRewardedVideoAvailable");
+		return false;
 	}
 
 	public void loadInterstitial()
 	{
-		getBridge().Call("loadInterstitial");
+		StubCall("loadInterstitial");
 	}
 
 	public void showInterstitial()
 	{
-		getBridge().Call("showInterstitial");
+		StubCall("showInterstitial");
 	}
 
 	public void showInterstitial(string placementName)
 	{
-		getBridge().Call("showInterstitial", placementName);
+		StubCall("showInterstitial");
 	}
 
 	public bool isInterstitialReady()
 	{
-		return getBridge().Call<bool>("isInterstitialReady", new object[0]);
+		StubCall("isInterstitialReady");
+		return false;
 	}
 
 	public bool isInterstitialPlacementCapped(string placementName)
 	{
-		return getBridge().Call<bool>("isInterstitialPlacementCapped", new object[1] { placementName });
+		StubCall("isInterstitialPlacementCapped");
+		return false;
 	}
 
 	public void loadISDemandOnlyInterstitial(string instanceId)
 	{
-		getBridge().Call("loadISDemandOnlyInterstitial", instanceId);
+		StubCall("loadISDemandOnlyInterstitial");
 	}
 
 	public void showISDemandOnlyInterstitial(string instanceId)
 	{
-		getBridge().Call("showISDemandOnlyInterstitial", instanceId);
+		StubCall("showISDemandOnlyInterstitial");
 	}
 
 	public void showISDemandOnlyInterstitial(string instanceId, string placementName)
 	{
-		getBridge().Call("showISDemandOnlyInterstitial", instanceId, placementName);
+		StubCall("showISDemandOnlyInterstitial");
 	}
 
 	public bool isISDemandOnlyInterstitialReady(string instanceId)
 	{
-		return getBridge().Call<bool>("isISDemandOnlyInterstitialReady", new object[1] { instanceId });
+		StubCall("isISDemandOnlyInterstitialReady");
+		return false;
 	}
 
 	public void showOfferwall()
 	{
-		getBridge().Call("showOfferwall");
+		StubCall("showOfferwall");
 	}
 
 	public void showOfferwall(string placementName)
 	{
-		getBridge().Call("showOfferwall", placementName);
+		StubCall("showOfferwall");
 	}
 
 	public void getOfferwallCredits()
 	{
-		getBridge().Call("getOfferwallCredits");
+		StubCall("getOfferwallCredits");
 	}
 
 	public bool isOfferwallAvailable()
 	{
-		return getBridge().Call<bool>("isOfferwallAvailable", new object[0]);
+		StubCall("isOfferwallAvailable");
+		return false;
 	}
 
 	public void loadBanner(IronSourceBannerSize size, IronSourceBannerPosition position)
 	{
-		getBridge().Call("loadBanner", (int)size, (int)position);
+		StubCall("loadBanner");
 	}
 
 	public void loadBanner(IronSourceBannerSize size, IronSourceBannerPosition position, string placementName)
 	{
-		getBridge().Call("loadBanner", (int)size, (int)position, placementName);
+		StubCall("loadBanner");
 	}
 
 	public void destroyBanner()
 	{
-		getBridge().Call("destroyBanner");
+		StubCall("destroyBanner");
 	}
 
 	public void displayBanner()
 	{
-		getBridge().Call("displayBanner");
+		StubCall("displayBanner");
 	}
 
 	public void hideBanner()
 	{
-		getBridge().Call("hideBanner");
+		StubCall("hideBanner");
 	}
 
 	public bool isBannerPlacementCapped(string placementName)
 	{
-		return getBridge().Call<bool>("isBannerPlacementCapped", new object[1] { placementName });
+		StubCall("isBannerPlacementCapped");
+		return false;
 	}
 
 	public void setSegment(IronSourceSegment segment)
 	{
-		Dictionary<string, string> segmentAsDict = segment.getSegmentAsDict();
-		string text = Json.Serialize(segmentAsDict);
-		getBridge().Call("setSegment", text);
+		StubCall("setSegment");
 	}
 }

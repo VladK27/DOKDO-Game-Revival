@@ -69,22 +69,33 @@ public class UnbiasedTime : MonoBehaviour
 		EndAndroid();
 	}
 
+	// ponytail: the native com.vasilij.unbiasedtime.UnbiasedTime Java class is absent from the APK,
+	// so every AndroidJavaClass call throws. Wrapped in try/catch -> falls back to system time
+	// (timeOffset stays 0). Anti-time-cheat is effectively disabled; gameplay is unaffected.
 	private void UpdateTimeOffsetAndroid()
 	{
 		if (Application.platform != RuntimePlatform.Android)
 		{
 			return;
 		}
-		using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+		try
 		{
-			using (AndroidJavaClass androidJavaClass2 = new AndroidJavaClass("com.vasilij.unbiasedtime.UnbiasedTime"))
+			using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
 			{
-				AndroidJavaObject androidJavaObject = androidJavaClass.GetStatic<AndroidJavaObject>("currentActivity");
-				if (androidJavaObject != null && androidJavaClass2 != null)
+				using (AndroidJavaClass androidJavaClass2 = new AndroidJavaClass("com.vasilij.unbiasedtime.UnbiasedTime"))
 				{
-					timeOffset = androidJavaClass2.CallStatic<long>("vtcTimestampOffset", new object[1] { androidJavaObject });
+					AndroidJavaObject androidJavaObject = androidJavaClass.GetStatic<AndroidJavaObject>("currentActivity");
+					if (androidJavaObject != null && androidJavaClass2 != null)
+					{
+						timeOffset = androidJavaClass2.CallStatic<long>("vtcTimestampOffset", new object[1] { androidJavaObject });
+					}
 				}
 			}
+		}
+		catch (Exception ex)
+		{
+			Debug.LogWarning("[STUB] UnbiasedTime native unavailable: " + ex.Message);
+			timeOffset = 0L;
 		}
 	}
 
@@ -94,17 +105,25 @@ public class UnbiasedTime : MonoBehaviour
 		{
 			return;
 		}
-		using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+		try
 		{
-			using (AndroidJavaClass androidJavaClass2 = new AndroidJavaClass("com.vasilij.unbiasedtime.UnbiasedTime"))
+			using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
 			{
-				AndroidJavaObject androidJavaObject = androidJavaClass.GetStatic<AndroidJavaObject>("currentActivity");
-				if (androidJavaObject != null && androidJavaClass2 != null)
+				using (AndroidJavaClass androidJavaClass2 = new AndroidJavaClass("com.vasilij.unbiasedtime.UnbiasedTime"))
 				{
-					androidJavaClass2.CallStatic("vtcOnSessionStart", androidJavaObject);
-					timeOffset = androidJavaClass2.CallStatic<long>("vtcTimestampOffset", new object[0]);
+					AndroidJavaObject androidJavaObject = androidJavaClass.GetStatic<AndroidJavaObject>("currentActivity");
+					if (androidJavaObject != null && androidJavaClass2 != null)
+					{
+						androidJavaClass2.CallStatic("vtcOnSessionStart", androidJavaObject);
+						timeOffset = androidJavaClass2.CallStatic<long>("vtcTimestampOffset", new object[0]);
+					}
 				}
 			}
+		}
+		catch (Exception ex)
+		{
+			Debug.LogWarning("[STUB] UnbiasedTime native unavailable: " + ex.Message);
+			timeOffset = 0L;
 		}
 	}
 
@@ -114,16 +133,23 @@ public class UnbiasedTime : MonoBehaviour
 		{
 			return;
 		}
-		using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+		try
 		{
-			using (AndroidJavaClass androidJavaClass2 = new AndroidJavaClass("com.vasilij.unbiasedtime.UnbiasedTime"))
+			using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
 			{
-				AndroidJavaObject androidJavaObject = androidJavaClass.GetStatic<AndroidJavaObject>("currentActivity");
-				if (androidJavaObject != null && androidJavaClass2 != null)
+				using (AndroidJavaClass androidJavaClass2 = new AndroidJavaClass("com.vasilij.unbiasedtime.UnbiasedTime"))
 				{
-					androidJavaClass2.CallStatic("vtcOnSessionEnd", androidJavaObject);
+					AndroidJavaObject androidJavaObject = androidJavaClass.GetStatic<AndroidJavaObject>("currentActivity");
+					if (androidJavaObject != null && androidJavaClass2 != null)
+					{
+						androidJavaClass2.CallStatic("vtcOnSessionEnd", androidJavaObject);
+					}
 				}
 			}
+		}
+		catch (Exception ex)
+		{
+			Debug.LogWarning("[STUB] UnbiasedTime native unavailable: " + ex.Message);
 		}
 	}
 
@@ -133,16 +159,23 @@ public class UnbiasedTime : MonoBehaviour
 		{
 			return true;
 		}
-		using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+		try
 		{
-			using (AndroidJavaClass androidJavaClass2 = new AndroidJavaClass("com.vasilij.unbiasedtime.UnbiasedTime"))
+			using (AndroidJavaClass androidJavaClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
 			{
-				AndroidJavaObject androidJavaObject = androidJavaClass.GetStatic<AndroidJavaObject>("currentActivity");
-				if (androidJavaObject != null && androidJavaClass2 != null)
+				using (AndroidJavaClass androidJavaClass2 = new AndroidJavaClass("com.vasilij.unbiasedtime.UnbiasedTime"))
 				{
-					return androidJavaClass2.CallStatic<bool>("vtcUsingDeviceTime", new object[0]);
+					AndroidJavaObject androidJavaObject = androidJavaClass.GetStatic<AndroidJavaObject>("currentActivity");
+					if (androidJavaObject != null && androidJavaClass2 != null)
+					{
+						return androidJavaClass2.CallStatic<bool>("vtcUsingDeviceTime", new object[0]);
+					}
 				}
 			}
+		}
+		catch (Exception ex)
+		{
+			Debug.LogWarning("[STUB] UnbiasedTime native unavailable: " + ex.Message);
 		}
 		return true;
 	}

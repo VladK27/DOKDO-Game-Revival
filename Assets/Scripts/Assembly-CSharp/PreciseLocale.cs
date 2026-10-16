@@ -81,7 +81,17 @@ public class PreciseLocale
 		{
 			if (_platform == null)
 			{
-				_platform = new PreciseLocaleAndroid();
+				// ponytail: com.kokosoft.preciselocale.PreciseLocale Java class is absent from the APK.
+				// Fall back to default locale instead of throwing TypeInitializationException.
+				try
+				{
+					_platform = new PreciseLocaleAndroid();
+				}
+				catch (System.Exception ex)
+				{
+					Debug.LogWarning("[STUB] PreciseLocale native unavailable: " + ex.Message);
+					_platform = new EditorBridge();
+				}
 			}
 			return _platform;
 		}

@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using IronSourceJSON;
 using UnityEngine;
 
+// ponytail: stub for the IronSource config bridge (ads disabled). Original ctor called
+// new AndroidJavaClass("com.ironsource.unity.androidbridge.AndroidBridge"), absent from the APK.
 public class IronSourceConfig
 {
 	private const string unsupportedPlatformStr = "Unsupported Platform";
@@ -26,31 +28,58 @@ public class IronSourceConfig
 
 	public IronSourceConfig()
 	{
-		using (AndroidJavaClass androidJavaClass = new AndroidJavaClass(AndroidBridge))
+		try
 		{
-			_androidBridge = androidJavaClass.CallStatic<AndroidJavaObject>("getInstance", new object[0]);
+			using (AndroidJavaClass androidJavaClass = new AndroidJavaClass(AndroidBridge))
+			{
+				_androidBridge = androidJavaClass.CallStatic<AndroidJavaObject>("getInstance", new object[0]);
+			}
 		}
+		catch (System.Exception ex)
+		{
+			Debug.LogWarning("[STUB] IronSourceConfig native unavailable: " + ex.Message);
+		}
+	}
+
+	private bool NoBridge(string method)
+	{
+		if (_androidBridge == null)
+		{
+			Debug.Log("[STUB] IronSourceConfig." + method);
+			return true;
+		}
+		return false;
 	}
 
 	public void setLanguage(string language)
 	{
-		_androidBridge.Call("setLanguage", language);
+		if (!NoBridge("setLanguage"))
+		{
+			_androidBridge.Call("setLanguage", language);
+		}
 	}
 
 	public void setClientSideCallbacks(bool status)
 	{
-		_androidBridge.Call("setClientSideCallbacks", status);
+		if (!NoBridge("setClientSideCallbacks"))
+		{
+			_androidBridge.Call("setClientSideCallbacks", status);
+		}
 	}
 
 	public void setRewardedVideoCustomParams(Dictionary<string, string> rewardedVideoCustomParams)
 	{
-		string text = Json.Serialize(rewardedVideoCustomParams);
-		_androidBridge.Call("setRewardedVideoCustomParams", text);
+		if (!NoBridge("setRewardedVideoCustomParams"))
+		{
+			_androidBridge.Call("setRewardedVideoCustomParams", Json.Serialize(rewardedVideoCustomParams));
+		}
 	}
 
 	public void setOfferwallCustomParams(Dictionary<string, string> offerwallCustomParams)
 	{
-		string text = Json.Serialize(offerwallCustomParams);
-		_androidBridge.Call("setOfferwallCustomParams", text);
+		if (!NoBridge("setOfferwallCustomParams"))
+		{
+			_androidBridge.Call("setOfferwallCustomParams", Json.Serialize(offerwallCustomParams));
+		}
 	}
 }

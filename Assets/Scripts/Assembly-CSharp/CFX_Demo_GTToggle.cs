@@ -20,12 +20,12 @@ public class CFX_Demo_GTToggle : MonoBehaviour
 
 	private bool Over;
 
-	private GUIText Label;
+	private CompatGUIText Label;
 
 	private void Awake()
 	{
-		CollisionRect = GetComponent<GUITexture>().GetScreenRect(Camera.main);
-		Label = GetComponentInChildren<GUIText>();
+		CollisionRect = GetComponent<CompatGUITexture>().GetScreenRect(Camera.main);
+		Label = GetComponentInChildren<CompatGUIText>();
 		UpdateTexture();
 	}
 
@@ -42,7 +42,7 @@ public class CFX_Demo_GTToggle : MonoBehaviour
 		else
 		{
 			Over = false;
-			GetComponent<GUITexture>().color = NormalColor;
+			GetComponent<CompatGUITexture>().color = NormalColor;
 		}
 		UpdateTexture();
 	}
@@ -58,13 +58,13 @@ public class CFX_Demo_GTToggle : MonoBehaviour
 		Color color = ((!State) ? DisabledColor : NormalColor);
 		if (Over)
 		{
-			GetComponent<GUITexture>().texture = Hover;
+			GetComponent<CompatGUITexture>().texture = Hover;
 		}
 		else
 		{
-			GetComponent<GUITexture>().texture = Normal;
+			GetComponent<CompatGUITexture>().texture = Normal;
 		}
-		GetComponent<GUITexture>().color = color;
+		GetComponent<CompatGUITexture>().color = color;
 		if (Label != null)
 		{
 			Label.color = color * 1.75f;

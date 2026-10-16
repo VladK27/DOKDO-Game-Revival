@@ -131,16 +131,7 @@ public class MNT_PlayerTemplate
 		_port = player.port;
 	}
 
-	public MNT_PlayerTemplate(NetworkPlayer player)
-	{
-		_externalIP = player.externalIP;
-		_externalPort = player.externalPort;
-		_guid = player.guid;
-		_ipAddress = player.ipAddress;
-		_port = player.port;
-		_id = player.ipAddress;
-	}
-
+	// ponytail: removed ctor over legacy UnityEngine.NetworkPlayer (removed in Unity 2018.2); no callers
 	public MNT_PlayerTemplate(MNT_BluetoothDeviceTemplate device)
 	{
 		_deviceName = device.Name;

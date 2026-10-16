@@ -3,15 +3,16 @@
 --- !u!258 &25800000
 LightProbes:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LightProbes
   m_Data:
     m_Tetrahedralization:
       m_Tetrahedra: []
       m_HullRays: []
     m_ProbeSets: []
     m_Positions: []
-    m_NonTetrahedralizedProbeSetIndexMap: {}
+    m_NonTetrahedralizedProbeSetIndexMap: []
   m_BakedCoefficients: []
   m_BakedLightOcclusion: []

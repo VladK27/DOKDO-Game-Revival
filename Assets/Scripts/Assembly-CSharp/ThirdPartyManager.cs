@@ -56,15 +56,9 @@ public class ThirdPartyManager : MonoBehaviour
 			MNP.HidePreloader();
 		});
 		Init();
-		if (FB.IsInitialized)
-		{
-			FB.ActivateApp();
-			return;
-		}
-		FB.Init(() =>
-		{
-			FB.ActivateApp();
-		});
+		// ponytail: Facebook SDK disabled. Original: if (FB.IsInitialized) FB.ActivateApp(); else FB.Init(...).
+		// The FB Java bridge class is absent from the APK; calling it would throw. Logged only, no callback is required to start the game.
+		Debug.Log("[STUB] Facebook disabled (no Init/ActivateApp)");
 	}
 
 	private void Init()
@@ -357,7 +351,8 @@ public class ThirdPartyManager : MonoBehaviour
 		MNP.HidePreloader();
 		if (isValid)
 		{
-			FB.LogPurchase(purchaseAmount, currency);
+			// ponytail: Facebook disabled (Java bridge absent)
+			Debug.Log("[STUB] FB.LogPurchase skipped");
 			purchaseEvent.Clear();
 			purchaseEvent.Add("af_currency", currency);
 			purchaseEvent.Add("af_revenue", purchaseAmount.ToString());

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CFX_Demo_New : MonoBehaviour
 {
-	public GUIText EffectLabel;
+	public CompatGUIText EffectLabel;
 
-	public GUIText EffectIndexLabel;
+	public CompatGUIText EffectIndexLabel;
 
 	public Renderer groundRenderer;
 

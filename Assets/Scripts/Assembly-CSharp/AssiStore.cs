@@ -144,10 +144,6 @@ public class AssiStore : MonoBehaviour
 				GM.Save();
 			}
 		}
-		else
-		{
-			ThirdPartyManager.instance.BuyProduct("dokdo_pick");
-		}
 	}
 
 	public void BuyAssistant()

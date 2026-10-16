@@ -240,10 +240,6 @@ public class IslandMenu : MonoBehaviour
 	{
 		if (!isFirst)
 		{
-			if (!GM.noAds)
-			{
-				ThirdPartyManager.instance.ShowInterstitialAds();
-			}
 		}
 		else
 		{

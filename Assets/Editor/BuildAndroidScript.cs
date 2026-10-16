@@ -29,6 +29,40 @@ public static class BuildAndroidScript
 			PlayerSettings.Android.forceInternetPermission = true;
 			PlayerSettings.Android.forceSDCardPermission = true;
 
+			// Original DOKDO launcher icon (extracted from the original APK).
+			int[] iconSizes = PlayerSettings.GetIconSizesForTargetGroup(BuildTargetGroup.Android);
+			Texture2D[] available = new Texture2D[]
+			{
+				AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/AppIcon/icon_36.png"),
+				AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/AppIcon/icon_48.png"),
+				AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/AppIcon/icon_72.png"),
+				AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/AppIcon/icon_96.png"),
+				AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/AppIcon/icon_144.png"),
+				AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/AppIcon/icon_192.png")
+			};
+			Texture2D[] iconTextures = new Texture2D[iconSizes.Length];
+			for (int i = 0; i < iconSizes.Length; i++)
+			{
+				Texture2D best = available[available.Length - 1];
+				int bestDiff = int.MaxValue;
+				foreach (Texture2D t in available)
+				{
+					if (t == null)
+					{
+						continue;
+					}
+					int diff = Mathf.Abs(t.width - iconSizes[i]);
+					if (diff < bestDiff)
+					{
+						bestDiff = diff;
+						best = t;
+					}
+				}
+				iconTextures[i] = best;
+			}
+			PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.Android, iconTextures);
+			Debug.Log("[BUILD] icon slots: " + string.Join(",", System.Array.ConvertAll(iconSizes, x => x.ToString())));
+
 			EditorUserBuildSettings.development = false;
 			EditorUserBuildSettings.allowDebugging = false;
 			EditorUserBuildSettings.buildAppBundle = false;

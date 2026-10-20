@@ -61,6 +61,20 @@ daily_reward,일일 보상,Daily Reward,每日獎勵,毎日補償,Tägliche Verg
 re_reward,재접속 보상,Reconnection reward,重新連結獎勵,再接続補償,Wiederanschlusskompensation,Поднимите награды
 tip1,해적선은 다른 배들보다 빠릅니다.,Pirate ships are faster than other ships.,海盜船比其他船舶要快。,海賊船は他の船より早いです。,Piratenschiffe sind schneller als andere Schiffe.,Corsair быстрее  чем другие корабли.
 tip2,어획량은 점점 줄어듭니다. 섬에 방문하면 초기화 됩니다.,The catch is getting smaller. It is reset when you visit the island.,捕魚量逐漸減少。 訪問島上的話就會變成初始化狀態。,漁獲量はますます小さくなります。 島に訪問したら初期化されます。,Der Fang wird kleiner und kleiner. Sobald Sie die Insel besucht haben  wird sie initialisiert.,Количество рыбной ловли уменьшается. Если вы посетите остров  он будет инициализирован.
+monitor_purchase_success,구매 성공,Purchase successful,購買成功,購入成功,Kauf erfolgreich,Покупка выполнена успешно
+monitor_not_enough_coins,코인이 부족합니다.,Not enough coins.,金幣不足。,コインが足りません。,Nicht genug Münzen.,Недостаточно монет.
+monitor_not_enough_resources,자원이 부족합니다.,Not enough resources.,資源不足。,資源が足りません。,Nicht genug Ressourcen.,Недостаточно ресурсов.
+monitor_island_conquered,{0}번 섬을 정복했다,Island {0} conquered,征服了第 {0} 座島,島 {0} を征服しました,Insel {0} erobert,Остров {0} захвачен
+monitor_fishing_success,낚시 성공,Fishing successful,釣魚成功,釣りに成功しました,Fischen erfolgreich,Рыбалка удалась
+monitor_revival_success,재생성 성공,Revival successful,復活成功,復活しました,Wiederbelebung erfolgreich,Возрождение выполнено
+monitor_parking,주차중,Parking,停泊中,停泊中,Anlegen,Стоянка
+monitor_auto_sailing_started,자동항해 시작,Autopilot started,自動航行已開始,自動航行を開始しました,Autopilot gestartet,Автопилот включён
+monitor_enemy_destroyed,적 파괴,Enemy destroyed,敵人已摧毀,敵を撃破しました,Gegner zerstört,Враг уничтожен
+monitor_island_reward_received,장악보상 수령,Island capture reward received,已領取佔領獎勵,島の占領報酬を受け取りました,Eroberungsbelohnung erhalten,Награда за захват острова получена
+monitor_not_enough_owned_items,소유한 물건이 부족합니다.,Not enough owned items.,持有物品不足。,所持アイテムが足りません。,Nicht genug eigene Gegenstände.,Недостаточно предметов.
+monitor_market_refreshed,마켓초기화,Market refreshed,市場已刷新,マーケットを更新しました,Markt aktualisiert,Рынок обновлён
+monitor_resolution,해상도 : {0}x{1},Resolution: {0}x{1},解析度：{0}x{1},解像度: {0}x{1},Auflösung: {0}x{1},Разрешение: {0}x{1}
+monitor_low_quality_resolution,저사양 모드 -> 해상도 : {0}x{1},Low quality mode -> resolution: {0}x{1},低畫質模式 -> 解析度：{0}x{1},低画質モード -> 解像度: {0}x{1},Niedrige Qualität -> Auflösung: {0}x{1},Низкое качество -> разрешение: {0}x{1}
 tip3,업데이트는 계속 됩니다. 많은 응원 부탁드립니다.,The update will continue. Please encourage us a lot.,更新將繼續。 請鼓勵我們很多。,アップデートは続きます。 多くの応援お願いします。,Das Update wird fortgesetzt. Vielen Dank für Ihre Unterstützung.,Обновление будет продолжено. Пожалуйста  поощряйте нас много.
 cloud_overwrite,클라우드 데이터에 덮어쓰겠습니까?,Overwrite cloud data. Continue?,重寫雲端數據。繼續？,クラウドデータに上書きか?,Cloud-Daten überschreiben. Fortsetzen?,Перепишите данные облака. Продолжить?
 seagull,갈매기,Seagull,海鷗,カモメ,Möwe,чайка

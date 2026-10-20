@@ -145,7 +145,7 @@ public class IslandMarket : MonoBehaviour
 		}
 		else
 		{
-			GM.AddStringToMonitor("소유한 물건이 부족합니다.");
+			GM.AddStringToMonitor(LocalizeManager.Instance.translate("monitor_not_enough_owned_items"));
 		}
 		init();
 	}

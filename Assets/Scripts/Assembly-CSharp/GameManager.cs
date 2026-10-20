@@ -310,14 +310,14 @@ public class GameManager : MonoBehaviour
 			Item obj = myResource[0];
 			obj.value = (int)obj.value - value;
 			audios.PlayOneShot(coin2);
-			AddStringToMonitor("구매 성공");
+			AddStringToMonitor(LocalizeManager.Instance.translate("monitor_purchase_success"));
 			EventManager.TriggerEvent(MyEvent.ResourceUpdate);
 		}
 		else
 		{
 			flag = false;
 			EventManager.TriggerEvent(MyEvent.NoMoney);
-			AddStringToMonitor("코인이 부족합니다.");
+			AddStringToMonitor(LocalizeManager.Instance.translate("monitor_not_enough_coins"));
 			audios.PlayOneShot(Nocoin);
 		}
 		return flag;
@@ -344,14 +344,14 @@ public class GameManager : MonoBehaviour
 				obj.value = (int)obj.value - res[j];
 			}
 			audios.PlayOneShot(coin2);
-			AddStringToMonitor("구매 성공");
+			AddStringToMonitor(LocalizeManager.Instance.translate("monitor_purchase_success"));
 			EventManager.TriggerEvent(MyEvent.ResourceUpdate);
 			flag = true;
 		}
 		else
 		{
 			flag = false;
-			AddStringToMonitor("자원이 부족합니다.");
+			AddStringToMonitor(LocalizeManager.Instance.translate("monitor_not_enough_resources"));
 			audios.PlayOneShot(Nocoin);
 		}
 		return flag;
@@ -418,7 +418,7 @@ public class GameManager : MonoBehaviour
 				}
 			}
 		}
-		AddStringToMonitor(Num + "번 섬을 정복했다");
+		AddStringToMonitor(string.Format(LocalizeManager.Instance.translate("monitor_island_conquered"), Num));
 		Save();
 		int num = TotalIsland();
 		if (num >= 28)
@@ -537,7 +537,7 @@ public class GameManager : MonoBehaviour
 				IslandGoods[i].goods[j].value = IslandGoodsDefault[i].goods[j].value;
 			}
 		}
-		AddStringToMonitor("마켓초기화");
+		AddStringToMonitor(LocalizeManager.Instance.translate("monitor_market_refreshed"));
 		EventManager.TriggerEvent(MyEvent.ReMarket);
 	}
 

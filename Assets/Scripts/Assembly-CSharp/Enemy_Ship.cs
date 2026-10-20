@@ -352,7 +352,7 @@ public class Enemy_Ship : MonoBehaviour
 		}
 		rigid.velocity = Vector3.zero;
 		rigid.constraints = DieRigid;
-		GameManager.Instance.AddStringToMonitor("적 파괴");
+		GameManager.Instance.AddStringToMonitor(LocalizeManager.Instance.translate("monitor_enemy_destroyed"));
 		Invoke("off", 3f);
 	}
 

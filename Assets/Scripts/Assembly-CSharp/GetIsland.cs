@@ -82,7 +82,7 @@ public class GetIsland : MonoBehaviour
 			}
 			Debug.Log(reward[0].value);
 			SC.GetItem(reward.ToArray());
-			GM.AddStringToMonitor("장악보상 수령");
+			GM.AddStringToMonitor(LocalizeManager.Instance.translate("monitor_island_reward_received"));
 			StartCoroutine(Close());
 		}
 	}

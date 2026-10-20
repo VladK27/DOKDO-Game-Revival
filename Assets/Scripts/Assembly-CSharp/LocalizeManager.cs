@@ -50,6 +50,7 @@ public class LocalizeManager : MonoBehaviour
 	public void init()
 	{
 		localized.Clear();
+		LoadMonitorTranslations();
 		Language = ObscuredPrefs.GetString("lang", Application.systemLanguage.ToString());
 		ObscuredPrefs.SetString("lang", Language);
 		currentLangNum = 2;
@@ -66,6 +67,35 @@ public class LocalizeManager : MonoBehaviour
 		for (int j = 0; j < words.Count; j++)
 		{
 			localized.Add(words[j].lang[0], words[j].lang[currentLangNum]);
+		}
+	}
+
+	private void LoadMonitorTranslations()
+	{
+		TextAsset textAsset = Resources.Load<TextAsset>("local");
+		if (textAsset == null)
+		{
+			return;
+		}
+		string[] lines = textAsset.text.Split('\n');
+		for (int i = 0; i < lines.Length; i++)
+		{
+			string[] columns = lines[i].TrimEnd('\r').Split(',');
+			if (columns.Length != 7 || !columns[0].StartsWith("monitor_"))
+			{
+				continue;
+			}
+			Word word = new Word();
+			word.lang = columns;
+			int existingIndex = indexOf(columns[0]);
+			if (existingIndex >= 0)
+			{
+				words[existingIndex] = word;
+			}
+			else
+			{
+				words.Add(word);
+			}
 		}
 	}
 

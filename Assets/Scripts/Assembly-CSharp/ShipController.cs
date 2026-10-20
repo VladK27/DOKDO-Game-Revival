@@ -438,7 +438,7 @@ public class ShipController : MonoBehaviour
 		item.type = itemType.fish;
 		item.value = FishGet;
 		remainItems.Add(item);
-		GM.AddStringToMonitor("낚시 성공");
+		GM.AddStringToMonitor(LocalizeManager.Instance.translate("monitor_fishing_success"));
 	}
 
 	private void FixedUpdate()
@@ -671,7 +671,7 @@ public class ShipController : MonoBehaviour
 		eulerAngles.x = 0f;
 		eulerAngles.z = 0f;
 		myShip.eulerAngles = eulerAngles;
-		GM.AddStringToMonitor("재생성 성공");
+		GM.AddStringToMonitor(LocalizeManager.Instance.translate("monitor_revival_success"));
 	}
 
 	public void Dead()
@@ -722,7 +722,7 @@ public class ShipController : MonoBehaviour
 		mousePos.gameObject.SetActive(false);
 		WaterFx.SetActive(false);
 		WaterFx.SetActive(true);
-		GM.AddStringToMonitor("주차중");
+		GM.AddStringToMonitor(LocalizeManager.Instance.translate("monitor_parking"));
 		SetPosMove(transform.Find("ParkingPos"));
 		GM.Save();
 	}
@@ -810,7 +810,7 @@ public class ShipController : MonoBehaviour
 			isDouble = false;
 			if (doubleclickT > 0f)
 			{
-				GM.AddStringToMonitor("자동항해 시작");
+				GM.AddStringToMonitor(LocalizeManager.Instance.translate("monitor_auto_sailing_started"));
 				isDouble = true;
 				tempx = (float)Screen.width * 0.5f;
 				tempy = (float)Screen.height * 0.5f;

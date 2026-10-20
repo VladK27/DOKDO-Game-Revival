@@ -27,7 +27,7 @@ public class FPSDisplayScript : MonoBehaviour
 		fps = 60f;
 		localT = 0f;
 		currentAverageFps = 60f;
-		GameManager.Instance.AddStringToMonitor("해상도 : " + Screen.width + "x" + Screen.height);
+		GameManager.Instance.AddStringToMonitor(string.Format(LocalizeManager.Instance.translate("monitor_resolution"), Screen.width, Screen.height));
 		Application.targetFrameRate = 60;
 		StartCoroutine(calFps());
 	}
@@ -61,7 +61,7 @@ public class FPSDisplayScript : MonoBehaviour
 			numberOfDataPoints = 0;
 			currentAverageFps = 60f;
 			QualitySettings.SetQualityLevel(0);
-			GameManager.Instance.AddStringToMonitor("저사양 모드 -> 해상도 : " + num2 + "x" + num);
+			GameManager.Instance.AddStringToMonitor(string.Format(LocalizeManager.Instance.translate("monitor_low_quality_resolution"), num2, num));
 		}
 	}
 

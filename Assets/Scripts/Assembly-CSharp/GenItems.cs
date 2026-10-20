@@ -18,8 +18,20 @@ public class GenItems : MonoBehaviour
 
 	private void Awake()
 	{
-		myShip = GameObject.Find("MyPos").transform;
+		GameObject shipObject = GameObject.Find("MyPos");
+		if (shipObject == null)
+		{
+			Debug.LogError("GenItems: ship object 'MyPos' was not found.");
+			enabled = false;
+			return;
+		}
+		myShip = shipObject.transform;
 		SC = myShip.GetComponent<ShipController>();
+		if (SC == null)
+		{
+			Debug.LogError("GenItems: ShipController was not found on 'MyPos'.");
+			enabled = false;
+		}
 	}
 
 	private void Start()
@@ -48,7 +60,7 @@ public class GenItems : MonoBehaviour
 		yield return new WaitForSeconds(Timer);
 		while (true)
 		{
-			if (!SC.isParking && !SC.isDead && !SC.isArena)
+			if (SC != null && !SC.isParking && !SC.isDead && !SC.isArena && itemPool != null && itemPool.isActiveAndEnabled)
 			{
 				Gen();
 			}

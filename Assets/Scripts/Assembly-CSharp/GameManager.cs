@@ -6,6 +6,7 @@ using SA.Common.Pattern;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
 	private static int COUNT;
 
 	private int index;
+
+	private Text monitorText;
 
 	[Header("Status")]
 	public ObscuredInt MyCurrnetHP;
@@ -487,6 +490,34 @@ public class GameManager : MonoBehaviour
 
 	public void AddStringToMonitor(string content)
 	{
+		if (monitorText == null)
+		{
+			GameObject monitor = GameObject.Find("monitor");
+			if (monitor == null)
+			{
+				return;
+			}
+			monitorText = monitor.GetComponent<Text>();
+		}
+		if (monitorText == null)
+		{
+			return;
+		}
+		monitorText.text = content;
+		monitorText.enabled = !string.IsNullOrEmpty(content);
+		CancelInvoke(nameof(HideMonitor));
+		if (monitorText.enabled)
+		{
+			Invoke(nameof(HideMonitor), 3f);
+		}
+	}
+
+	private void HideMonitor()
+	{
+		if (monitorText != null)
+		{
+			monitorText.enabled = false;
+		}
 	}
 
 	public ObscuredInt HealPoint()

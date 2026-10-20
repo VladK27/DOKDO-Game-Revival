@@ -78,6 +78,7 @@ public class Boat_Setting : MonoBehaviour
 
 	public void init(int Sail, int Head, int Body)
 	{
+		RestoreEnemyReferences();
 		for (int i = 0; i < Bodys.Length; i++)
 		{
 			Bodys[i].SetActive(false);
@@ -208,5 +209,77 @@ public class Boat_Setting : MonoBehaviour
 			}
 			s4 = SettingList[Sail].pos4;
 		}
+	}
+
+	private void RestoreEnemyReferences()
+	{
+		if (ES == null || (Bodys != null && Bodys.Length > 0))
+		{
+			return;
+		}
+		Bodys = new GameObject[10];
+		HeadPos = new Transform[10];
+		SailPos1 = new Transform[10];
+		SailPos2 = new Transform[10];
+		SailPos3 = new Transform[10];
+		SailPos4 = new Transform[10];
+		for (int i = 0; i < Bodys.Length; i++)
+		{
+			Transform bodyLevel = transform.Find("BodyLv_" + (i + 1));
+			if (bodyLevel == null)
+			{
+				continue;
+			}
+			Bodys[i] = bodyLevel.gameObject;
+			string boatName = (i < 6) ? "BoatBody" : ((i < 9) ? "body_" + (i + 1) : "body_10");
+			Transform boatBody = bodyLevel.Find(boatName);
+			if (boatBody != null)
+			{
+				HeadPos[i] = boatBody.Find("Head");
+				SailPos1[i] = boatBody.Find("Sail1");
+				SailPos2[i] = boatBody.Find("Sail2");
+				SailPos3[i] = boatBody.Find("Sail3");
+				SailPos4[i] = boatBody.Find("Sail4");
+			}
+		}
+		Heads = FindNumberedTransforms("HeadParent", "head_", 1, 50);
+		Sails1 = FindNamedTransforms("SailObj1", new string[] { "sail_b_1", "sail_b_2", "sail_b_3", "sail_b_4", "sail_b_5", "sail_d_1" });
+		Sails2 = FindNamedTransforms("SailObj2", new string[] { "sail_a_11", "sail_a_12", "sail_a_13", "sail_a_14", "sail_a_15", "sail_a_16", "sail_a_17", "sail_a_18", "sail_a_19", "sail_a_20", "sail_d_1" });
+		Sails3 = FindNamedTransforms("SailObj3", new string[] { "sail_a_1", "sail_a_2", "sail_a_3", "sail_a_4", "sail_a_5", "sail_a_6", "sail_a_7", "sail_a_8", "sail_a_9", "sail_a_10", "sail_a_11", "sail_a_12", "sail_a_13", "sail_a_14", "sail_a_15", "sail_a_16", "sail_a_17", "sail_a_18", "sail_a_19", "sail_a_20", "sail_a_21", "sail_a_22", "sail_a_23", "sail_a_24", "sail_a_25", "sail_d_2" });
+		Sails4 = FindNamedTransforms("SailObj4", new string[] { "sail_c_1", "sail_c_2", "sail_c_3", "sail_c_4", "sail_c_5", "sail_d_1" });
+		SailParent1 = transform.Find("SailObj1");
+		SailParent2 = transform.Find("SailObj2");
+		SailParent3 = transform.Find("SailObj3");
+		SailParent4 = transform.Find("SailObj4");
+		HeadParent = transform.Find("HeadParent");
+		if (SettingList == null || SettingList.Length == 0)
+		{
+			ShipController player = Object.FindObjectOfType<ShipController>();
+			Boat_Setting playerSetting = player == null ? null : player.GetComponentInChildren<Boat_Setting>();
+			if (playerSetting != null)
+			{
+				SettingList = playerSetting.SettingList;
+			}
+		}
+	}
+
+	private Transform[] FindNumberedTransforms(string parentName, string prefix, int first, int count)
+	{
+		Transform[] found = new Transform[count];
+		for (int i = 0; i < count; i++)
+		{
+			found[i] = transform.Find(parentName + "/" + prefix + (first + i));
+		}
+		return found;
+	}
+
+	private Transform[] FindNamedTransforms(string parentName, string[] names)
+	{
+		Transform[] found = new Transform[names.Length];
+		for (int i = 0; i < names.Length; i++)
+		{
+			found[i] = transform.Find(parentName + "/" + names[i]);
+		}
+		return found;
 	}
 }

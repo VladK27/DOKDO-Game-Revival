@@ -122,6 +122,10 @@ public class Enemy_Ship : MonoBehaviour
 	{
 		GM = GameManager.Instance;
 		myT = base.transform;
+		if (tempobj == null)
+		{
+			tempobj = myT.Find("tempObj");
+		}
 		bulletPool = GameObject.Find("bullet Enemy").GetComponent<EZObjectPool>();
 		shipboom = GameObject.Find("ship boom Effect").GetComponent<EZObjectPool>();
 		itemPool = GameObject.Find("Floating Objects").GetComponent<EZObjectPool>();
@@ -263,6 +267,40 @@ public class Enemy_Ship : MonoBehaviour
 		if (BS == null)
 		{
 			BS = GetComponentInChildren<Boat_Setting>();
+		}
+		bool missingBoatReference = boats == null || boats.Length < 10;
+		if (!missingBoatReference)
+		{
+			for (int i = 0; i < 10; i++)
+			{
+				if (boats[i] == null)
+				{
+					missingBoatReference = true;
+					break;
+				}
+			}
+		}
+		if (missingBoatReference)
+		{
+			boats = new Transform[10];
+			for (int i = 0; i < boats.Length; i++)
+			{
+				Transform bodyLevel = myT.Find("BodySetting/BodyLv_" + (i + 1));
+				if (bodyLevel == null)
+				{
+					continue;
+				}
+				string boatName = (i < 6) ? "BoatBody" : ((i < 9) ? "body_" + (i + 1) : "dummy");
+				Transform[] bodyTransforms = bodyLevel.GetComponentsInChildren<Transform>(true);
+				for (int j = 0; j < bodyTransforms.Length; j++)
+				{
+					if (bodyTransforms[j].name.Equals(boatName))
+					{
+						boats[i] = bodyTransforms[j];
+						break;
+					}
+				}
+			}
 		}
 		boat = boats[Lv_body - 1];
 		BS.init(Lv_Sail - 1, Lv_Head - 1, Lv_body - 1);

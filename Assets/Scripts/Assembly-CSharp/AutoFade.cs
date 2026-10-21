@@ -19,11 +19,7 @@ public class AutoFade : MonoBehaviour
 		img.DOFade(1f, 0f);
 		img.DOFade(0f, 1f);
 		load.DOFade(0f, 0f);
-		if (!GameManager.Instance.noAds)
-		{
-			CrossPromotion.addShowAdsToQueue();
-		}
-		CrossPromotion.showPrivacyWindow();
+		// AD REMOVAL: Do not queue cross-promotion interstitials or open the advertising consent popup.
 	}
 
 	public void StartGame()

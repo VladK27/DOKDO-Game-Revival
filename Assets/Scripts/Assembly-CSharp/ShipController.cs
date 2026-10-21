@@ -791,11 +791,31 @@ public class ShipController : MonoBehaviour
 	public void ShootEach(Vector3 pos, Quaternion rot)
 	{
 		audios.PlayOneShot(boom);
-		GameObject obj;
-		bulletPool.TryGetNextObject(pos, rot, out obj);
-		obj.GetComponent<Bullets>().atk = GM.MyAtk();
-		obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
-		obj.GetComponent<Rigidbody>().AddForce(obj.transform.forward * ShootPower);
+		GameObject obj = null;
+		bool gotBullet = bulletPool != null && bulletPool.TryGetNextObject(pos, rot, out obj);
+		if (!gotBullet)
+		{
+			obj = null;
+		}
+		Debug.Log("[SHOT_DIAG] ShootEach pool=" + (bulletPool != null ? bulletPool.PoolName : "NULL") + " gotBullet=" + gotBullet + " pos=" + pos + " rotation=" + rot.eulerAngles + " active=" + (bulletPool != null ? bulletPool.ActiveObjectCount().ToString() : "n/a"));
+		if (obj == null)
+		{
+			return;
+		}
+		Bullets bullet = obj.GetComponent<Bullets>();
+		Rigidbody bulletBody = obj.GetComponent<Rigidbody>();
+		if (bullet == null || bulletBody == null)
+		{
+			Debug.LogError("[SHOT_DIAG] player projectile is missing Bullets or Rigidbody component object=" + obj.name + " bullets=" + (bullet != null) + " rigidbody=" + (bulletBody != null));
+			obj.SetActive(false);
+			return;
+		}
+		Debug.Log("[SHOT_DIAG] activated object=" + obj.name + " active=" + obj.activeInHierarchy + " scale=" + obj.transform.lossyScale + " mesh=" + (obj.GetComponent<MeshRenderer>() != null) + " forward=" + obj.transform.forward + " initialVelocity=" + (bulletBody != null ? bulletBody.velocity.ToString() : "NULL"));
+		bullet.isEnemy = false;
+		bullet.atk = GM.MyAtk();
+		bulletBody.velocity = Vector3.zero;
+		bulletBody.AddForce(obj.transform.forward * ShootPower);
+		Debug.Log("[SHOT_DIAG] launched attack=" + bullet.atk + " force=" + ShootPower + " velocity=" + bulletBody.velocity + " camera=" + (Camera.main != null ? Camera.main.WorldToViewportPoint(obj.transform.position).ToString() : "NULL"));
 	}
 
 	private void SetCannon()

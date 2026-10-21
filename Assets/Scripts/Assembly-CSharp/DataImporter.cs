@@ -21,7 +21,16 @@ public class DataImporter : MonoBehaviour
 		int num = 0;
 		for (int i = 0; i < stringList.Length; i++)
 		{
-			string[] array = stringList[i].Split(',');
+			if (string.IsNullOrWhiteSpace(stringList[i]))
+			{
+				continue;
+			}
+			string[] array = LocalizeManager.ParseCsvRow(stringList[i].TrimEnd('\r'));
+			if (array.Length != 7)
+			{
+				Debug.LogWarning("Invalid localization row: " + stringList[i]);
+				continue;
+			}
 			Word word = new Word();
 			int num2 = 7;
 			word.lang = new string[num2];

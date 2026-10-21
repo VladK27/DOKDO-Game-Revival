@@ -62,18 +62,8 @@ namespace Percent.View
 
 		private void Start()
 		{
-			Application.RequestAdvertisingIdentifierAsync((string advertisingId, bool trackingEnabled, string error) =>
-			{
-				UUIDLoader.advertisingId = advertisingId;
-				UUIDLoader.isTrackingEnabled = trackingEnabled;
-			});
-			if (PlayerPrefs.HasKey(PRIVACY_POLICY_VERSION))
-			{
-				privacyPolicyVersion = PlayerPrefs.GetInt(PRIVACY_POLICY_VERSION);
-			}
-			textTool = new TextTool();
-			replaceDescription(textLoader.readDeafultDescription());
-			hideSelfWithoutThirdparties();
+		// AD REMOVAL: Do not request an advertising identifier or initialize the ad privacy flow.
+		base.gameObject.SetActive(false);
 		}
 
 		public void showWindow()

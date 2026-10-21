@@ -10,9 +10,15 @@ public class LangControl : MonoBehaviour
 
 	public void ChangeLang(string lang)
 	{
+		Debug.Log("[LOCALE] ChangeLang requested=" + lang + " manager=" + (LocalizeManager.Instance != null));
+		if (LocalizeManager.Instance == null)
+		{
+			return;
+		}
 		LocalizeManager.Instance.Language = lang;
 		LocalizeManager.Instance.SaveLang();
 		init();
+		Debug.Log("[LOCALE] ChangeLang applied=" + LocalizeManager.Instance.Language + " index=" + LocalizeManager.Instance.currentLangNum);
 		SceneManager.LoadScene("Intro");
 	}
 

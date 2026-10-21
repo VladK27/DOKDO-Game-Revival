@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Enemy_Ship : MonoBehaviour
 {
+	private const float DefaultShootPower = 1000f;
 	[Header("CurrentData")]
 	public int CurrentHP;
 
@@ -114,6 +115,65 @@ public class Enemy_Ship : MonoBehaviour
 
 	private List<Item> thisReward = new List<Item>();
 
+	private float fireDiagTimer;
+
+	private float aiDiagTimer;
+
+	private float nextShotTime;
+
+	private const float EnemyShotInterval = 3f;
+
+	private void Update()
+	{
+		fireDiagTimer -= Time.deltaTime;
+		if (fireDiagTimer <= 0f)
+		{
+			fireDiagTimer = 5f;
+			EffectList[] effectLists = GetComponentsInChildren<EffectList>(true);
+			string state = "";
+			for (int i = 0; i < effectLists.Length; i++)
+			{
+				EffectList fx = effectLists[i];
+				state += " [" + fx.transform.name + " id=" + fx.GetInstanceID() + " active=" + fx.gameObject.activeInHierarchy + " count=" + (fx.FxList == null ? -1 : fx.FxList.Length);
+				if (fx.FxList != null)
+				{
+					for (int j = 0; j < fx.FxList.Length; j++)
+					{
+						state += " " + (fx.FxList[j] != null ? fx.FxList[j].name + "=" + fx.FxList[j].activeSelf : "NULL");
+					}
+				}
+				state += "]";
+			}
+			Debug.Log("[FIRE_DIAG] Enemy state name=" + myT.name + " id=" + GetInstanceID() + " HP=" + CurrentHP + "/" + HP + " isDead=" + isDead + " effects=" + effectLists.Length + state);
+		}
+		aiDiagTimer -= Time.deltaTime;
+		if (aiDiagTimer <= 0f)
+		{
+			aiDiagTimer = 4f;
+			ShootCheck[] checks = GetComponentsInChildren<ShootCheck>(true);
+			int activeChecks = 0;
+			int targetChecks = 0;
+			int emptyTags = 0;
+			for (int i = 0; i < checks.Length; i++)
+			{
+				if (checks[i].isActiveAndEnabled)
+				{
+					activeChecks++;
+					if (checks[i].isTarget)
+					{
+						targetChecks++;
+					}
+				}
+				if (string.IsNullOrEmpty(checks[i].TargetTag))
+				{
+					emptyTags++;
+				}
+			}
+			float distance = myShip != null ? Vector3.Distance(myT.position, myShip.position) : -1f;
+			Debug.Log("[AI_DIAG] Enemy state name=" + myT.name + " id=" + GetInstanceID() + " pos=" + myT.position + " distance=" + distance + " lockOn=" + LockOn + " detectRange=" + DetactRange + " atkRange=" + AtkRange + " parking=" + (SC != null && SC.isParking) + " playerDead=" + (SC == null || SC.isDead) + " pirate=" + isPirate + " arena=" + isArena + "/" + (SC != null && SC.isArena) + " dead=" + isDead + " hp=" + CurrentHP + "/" + HP + " ai(v,s)=(" + v + "," + s + ") velocity=" + (rigid != null ? rigid.velocity.ToString() : "NULL") + " kinematic=" + (rigid != null && rigid.isKinematic) + " constraints=" + (rigid != null ? rigid.constraints.ToString() : "NULL") + " checks=" + activeChecks + "/" + checks.Length + " targeted=" + targetChecks + " emptyTags=" + emptyTags + " enemyShotsActive=" + (bulletPool != null ? bulletPool.ActiveObjectCount().ToString() : "NULL"));
+		}
+	}
+
 	private void Start()
 	{
 	}
@@ -133,10 +193,15 @@ public class Enemy_Ship : MonoBehaviour
 		myShip = GameObject.Find("MyPos").transform;
 		SC = myShip.GetComponent<ShipController>();
 		rigid = GetComponent<Rigidbody>();
+		if (audios == null)
+		{
+			audios = GetComponent<AudioSource>();
+		}
 	}
 
 	private void OnEnable()
 	{
+		Debug.Log("[FIRE_DIAG] Enemy OnEnable name=" + myT.name + " id=" + GetInstanceID() + " HP=" + HP + " CurrentHP=" + CurrentHP + " isDead=" + isDead + " pirate=" + isPirate);
 		myT.DOKill();
 		myT.localScale = Vector3.one;
 		myT.DOScale(Vector3.zero, 0.5f).From().SetEase(Ease.OutBack);
@@ -171,6 +236,19 @@ public class Enemy_Ship : MonoBehaviour
 
 	public void init(int tierLevel)
 	{
+		EnsureShootPower();
+		if (AtkRange <= 0f || DetactRange <= 0f)
+		{
+			Debug.LogWarning("[AI_DIAG] restoring missing enemy combat ranges name=" + myT.name + " AtkRange=" + AtkRange + " DetactRange=" + DetactRange + " sourcePrefabDefaults=15/60");
+			if (AtkRange <= 0f)
+			{
+				AtkRange = 15f;
+			}
+			if (DetactRange <= 0f)
+			{
+				DetactRange = 60f;
+			}
+		}
 		int num = 1;
 		if (GM.CurrentWorld.Equals(WorldType.Dokdo))
 		{
@@ -227,11 +305,13 @@ public class Enemy_Ship : MonoBehaviour
 			}
 		}
 		Lv_body = num;
+		Debug.Log("[FIRE_DIAG] Enemy init name=" + myT.name + " id=" + GetInstanceID() + " tierLevel=" + tierLevel + " world=" + GM.CurrentWorld + " Lv_body=" + Lv_body + " pirate=" + isPirate);
 		Lv_Cannon = num * 2;
 		Lv_Head = num * 5;
 		Lv_Sail = num * 5;
 		isDead = false;
 		LockOn = false;
+		nextShotTime = 0f;
 		rigid.constraints = FixRigidInit;
 		rigid.velocity = Vector3.zero;
 		rigid.angularVelocity = Vector3.zero;
@@ -252,7 +332,9 @@ public class Enemy_Ship : MonoBehaviour
 	{
 		if (!isDead)
 		{
+			int hpBefore = CurrentHP;
 			CurrentHP -= Damage;
+			Debug.Log("[FIRE_DIAG] Enemy Hit name=" + myT.name + " id=" + GetInstanceID() + " damage=" + Damage + " HP=" + HP + " current=" + hpBefore + "->" + CurrentHP + " ratio=" + ((float)CurrentHP / HP) + " caller=" + new System.Diagnostics.StackTrace(1, true));
 			BurnFx.init((float)CurrentHP / (float)HP);
 			if (CurrentHP <= 0)
 			{
@@ -304,7 +386,9 @@ public class Enemy_Ship : MonoBehaviour
 		}
 		boat = boats[Lv_body - 1];
 		BS.init(Lv_Sail - 1, Lv_Head - 1, Lv_body - 1);
+		SetCannon();
 		BurnFx = GetComponentInChildren<EffectList>();
+			Debug.Log("[FIRE_DIAG] Enemy SetLook effects name=" + myT.name + " id=" + GetInstanceID() + " selected=" + (BurnFx == null ? "null" : BurnFx.transform.name + " id=" + BurnFx.GetInstanceID() + " path=" + GetPath(BurnFx.transform) + " count=" + (BurnFx.FxList == null ? -1 : BurnFx.FxList.Length)));
 		steerForce = (float)GM.baseSteer + (float)Lv_Head * (float)GM.steerCoeff;
 		rigid.mass = (float)GM.baseMass + (float)Lv_body * (float)GM.massCoeff;
 		rigid.angularDrag = GM.rigidAngleDrag;
@@ -313,7 +397,19 @@ public class Enemy_Ship : MonoBehaviour
 		HP = (int)(num * (1f * (float)((int)GM.baseHP + (Lv_body - 1) * (int)GM.hpCoeff) + (float)((int)GM.hpCoeff2 * Lv_body * Lv_body)));
 		Atk = (int)(1f * (float)((int)GM.baseAtk + Lv_Cannon * (int)GM.AtkCoeff));
 		CurrentHP = HP;
+		Debug.Log("[FIRE_DIAG] Enemy SetLook name=" + myT.name + " id=" + GetInstanceID() + " world=" + GM.CurrentWorld + " bodyLv=" + Lv_body + " baseHP=" + GM.baseHP + " hpCoeff=" + GM.hpCoeff + " hpCoeff2=" + GM.hpCoeff2 + " worldMultiplier=" + num + " HP=" + HP + " CurrentHP=" + CurrentHP + " isPirate=" + isPirate);
 		boat.localRotation = Quaternion.identity;
+	}
+
+	private string GetPath(Transform target)
+	{
+		string path = target.name;
+		while (target.parent != null && target.parent != myT)
+		{
+			target = target.parent;
+			path = target.name + "/" + path;
+		}
+		return path;
 	}
 
 	private void Dead()
@@ -363,38 +459,230 @@ public class Enemy_Ship : MonoBehaviour
 
 	public void Shoot(bool isLeft)
 	{
-		if (Cannons == null)
+		if (SC == null || SC.isDead || isDead || SC.isParking)
 		{
-			SetCannon();
+			return;
 		}
-		audios.PlayOneShot(boom);
+		if (Time.time < nextShotTime)
+		{
+			Debug.Log("[AI_DIAG] Enemy Shoot throttled name=" + myT.name + " side=" + (isLeft ? "left" : "right") + " nextShotIn=" + (nextShotTime - Time.time).ToString("F2"));
+			return;
+		}
+		if (myShip != null)
+		{
+			float playerLocalX = myT.InverseTransformPoint(myShip.position).x;
+			bool playerOnLeft = playerLocalX < 0f;
+			if (isLeft != playerOnLeft)
+			{
+				Debug.Log("[AI_DIAG] Enemy Shoot rejected wrong side name=" + myT.name + " requested=" + (isLeft ? "left" : "right") + " playerLocalX=" + playerLocalX.ToString("F2") + " targetSide=" + (playerOnLeft ? "left" : "right"));
+				return;
+			}
+		}
+		nextShotTime = Time.time + EnemyShotInterval;
+		EnsureShootPower();
+		SetCannon();
+		if (Cannons == null || bulletPool == null)
+		{
+			Debug.LogError("[AI_DIAG] Enemy Shoot cannot fire name=" + myT.name + " cannons=" + (Cannons != null) + " bulletPool=" + (bulletPool != null));
+			return;
+		}
+		Transform[] selectedCannons = isLeft ? Cannons.cannonsL : Cannons.cannonsR;
+		if (selectedCannons == null)
+		{
+			Debug.LogError("[AI_DIAG] Enemy Shoot cannon array missing name=" + myT.name + " side=" + (isLeft ? "left" : "right"));
+			return;
+		}
+		if (selectedCannons.Length == 0)
+		{
+			Debug.LogError("[AI_DIAG] Enemy Shoot has no cannon transforms name=" + myT.name + " boat=" + (boat != null ? boat.name : "NULL") + " cannonParent=" + GetPath(Cannons.transform) + " side=" + (isLeft ? "left" : "right"));
+			return;
+		}
+		Debug.Log("[AI_DIAG] Enemy Shoot name=" + myT.name + " id=" + GetInstanceID() + " side=" + (isLeft ? "left" : "right") + " cannons=" + selectedCannons.Length + " pool=" + bulletPool.PoolName + " audio=" + (audios != null) + " playerDistance=" + (myShip != null ? Vector3.Distance(myT.position, myShip.position).ToString() : "NULL") + " parking=" + (SC != null && SC.isParking));
+		if (audios != null && boom != null)
+		{
+			audios.PlayOneShot(boom);
+		}
 		if (isLeft)
 		{
 			for (int i = 0; i < Cannons.cannonsL.Length; i++)
 			{
-				GameObject obj;
-				bulletPool.TryGetNextObject(Cannons.cannonsL[i].position, Cannons.cannonsL[i].rotation, out obj);
-				obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
-				obj.GetComponent<Rigidbody>().AddForce(obj.transform.forward * ShootPower);
-				obj.GetComponent<Bullets>().atk = Atk;
+				if (Cannons.cannonsL[i] == null)
+				{
+					Debug.LogError("[AI_DIAG] Enemy left cannon transform is null name=" + myT.name + " index=" + i);
+					continue;
+				}
+				GameObject obj = null;
+				Quaternion shotRotation = GetEnemyShotRotation(Cannons.cannonsL[i]);
+				bool gotBullet = bulletPool != null && bulletPool.TryGetNextObject(Cannons.cannonsL[i].position, shotRotation, out obj);
+				Debug.Log("[AI_DIAG] Enemy projectile left=" + i + " got=" + gotBullet + " pos=" + Cannons.cannonsL[i].position + " rot=" + Cannons.cannonsL[i].rotation.eulerAngles);
+				if (!gotBullet || obj == null)
+				{
+					continue;
+				}
+				Rigidbody projectileBody = obj.GetComponent<Rigidbody>();
+				Bullets projectile = obj.GetComponent<Bullets>();
+				if (projectileBody == null || projectile == null)
+				{
+					Debug.LogError("[AI_DIAG] Enemy projectile missing components name=" + myT.name + " rigidbody=" + (projectileBody != null) + " bullets=" + (projectile != null));
+					obj.SetActive(false);
+					continue;
+				}
+				projectileBody.velocity = Vector3.zero;
+				projectile.SetFaction(true);
+				projectile.atk = Atk;
+				projectileBody.AddForce(obj.transform.forward * ShootPower);
+				LogEnemyProjectile(obj, projectileBody, projectile, isLeft, i);
 			}
 		}
 		else
 		{
 			for (int j = 0; j < Cannons.cannonsR.Length; j++)
 			{
-				GameObject obj2;
-				bulletPool.TryGetNextObject(Cannons.cannonsR[j].position, Cannons.cannonsR[j].rotation, out obj2);
-				obj2.GetComponent<Rigidbody>().velocity = Vector3.zero;
-				obj2.GetComponent<Rigidbody>().AddForce(obj2.transform.forward * ShootPower);
-				obj2.GetComponent<Bullets>().atk = Atk;
+				if (Cannons.cannonsR[j] == null)
+				{
+					Debug.LogError("[AI_DIAG] Enemy right cannon transform is null name=" + myT.name + " index=" + j);
+					continue;
+				}
+				GameObject obj2 = null;
+				Quaternion shotRotation = GetEnemyShotRotation(Cannons.cannonsR[j]);
+				bool gotBullet = bulletPool != null && bulletPool.TryGetNextObject(Cannons.cannonsR[j].position, shotRotation, out obj2);
+				Debug.Log("[AI_DIAG] Enemy projectile right=" + j + " got=" + gotBullet + " pos=" + Cannons.cannonsR[j].position + " rot=" + Cannons.cannonsR[j].rotation.eulerAngles);
+				if (!gotBullet || obj2 == null)
+				{
+					continue;
+				}
+				Rigidbody projectileBody = obj2.GetComponent<Rigidbody>();
+				Bullets projectile = obj2.GetComponent<Bullets>();
+				if (projectileBody == null || projectile == null)
+				{
+					Debug.LogError("[AI_DIAG] Enemy projectile missing components name=" + myT.name + " rigidbody=" + (projectileBody != null) + " bullets=" + (projectile != null));
+					obj2.SetActive(false);
+					continue;
+				}
+				projectileBody.velocity = Vector3.zero;
+				projectile.SetFaction(true);
+				projectile.atk = Atk;
+				projectileBody.AddForce(obj2.transform.forward * ShootPower);
+				LogEnemyProjectile(obj2, projectileBody, projectile, isLeft, j);
 			}
 		}
 	}
 
+	private void EnsureShootPower()
+	{
+		if (ShootPower <= 0f)
+		{
+			Debug.LogWarning("[AI_DIAG] restoring zero enemy ShootPower name=" + base.name + " value=" + ShootPower + " sourcePrefabDefault=" + DefaultShootPower);
+			ShootPower = DefaultShootPower;
+		}
+	}
+
+	private Quaternion GetEnemyShotRotation(Transform cannon)
+	{
+		if (cannon == null || myShip == null)
+		{
+			return cannon != null ? cannon.rotation : Quaternion.identity;
+		}
+
+		Vector3 toTarget = myShip.position - cannon.position;
+		Vector3 horizontal = Vector3.ProjectOnPlane(toTarget, Vector3.up);
+		float distance = horizontal.magnitude;
+		if (distance < 0.01f)
+		{
+			return cannon.rotation;
+		}
+
+		float muzzleSpeed = ShootPower * Time.fixedDeltaTime;
+		if (bulletPool != null && bulletPool.Template != null)
+		{
+			Rigidbody templateBody = bulletPool.Template.GetComponent<Rigidbody>();
+			if (templateBody != null && templateBody.mass > 0f)
+			{
+				muzzleSpeed /= templateBody.mass;
+			}
+		}
+
+		float gravity = Mathf.Abs(Physics.gravity.y);
+		float verticalOffset = toTarget.y;
+		float speedSquared = muzzleSpeed * muzzleSpeed;
+		float discriminant = speedSquared * speedSquared - gravity * (gravity * distance * distance + 2f * verticalOffset * speedSquared);
+		float angle = 0f;
+		if (gravity > 0.001f && muzzleSpeed > 0.1f)
+		{
+			angle = discriminant >= 0f
+				? Mathf.Atan((speedSquared - Mathf.Sqrt(discriminant)) / (gravity * distance))
+				: Mathf.PI * 0.25f;
+		}
+
+		float horizontalScale = Mathf.Cos(angle);
+		Vector3 direction = horizontal.normalized * horizontalScale + Vector3.up * Mathf.Sin(angle);
+		return Quaternion.LookRotation(direction, Vector3.up);
+	}
+
+	private void LogEnemyProjectile(GameObject projectileObject, Rigidbody projectileBody, Bullets projectile, bool isLeft, int cannonIndex)
+	{
+		Vector3 directionToPlayer = myShip != null ? (myShip.position - projectileObject.transform.position).normalized : Vector3.zero;
+		Renderer projectileRenderer = projectileObject.GetComponent<Renderer>();
+		Debug.Log("[SHOT_DIAG] enemy launch name=" + myT.name + " side=" + (isLeft ? "left" : "right") + " cannon=" + cannonIndex + " pos=" + projectileObject.transform.position + " rotation=" + projectileObject.transform.eulerAngles + " forward=" + projectileObject.transform.forward + " forwardY=" + projectileObject.transform.forward.y.ToString("F3") + " directionToPlayer=" + directionToPlayer + " aimDot=" + Vector3.Dot(projectileObject.transform.forward, directionToPlayer).ToString("F3") + " shootPower=" + ShootPower + " atk=" + projectile.atk + " velocityAfterAddForce=" + projectileBody.velocity + " materialColor=" + (projectileRenderer != null && projectileRenderer.sharedMaterial != null ? projectileRenderer.sharedMaterial.color.ToString() : "NO_MATERIAL"));
+	}
+
 	private void SetCannon()
 	{
+		if (boat != null)
+		{
+			CannonParent boatCannons = boat.GetComponentInChildren<CannonParent>(true);
+			if (boatCannons != null)
+			{
+				Cannons = boatCannons;
+				if (HasMissingCannonPoints(Cannons.cannonsL) || HasMissingCannonPoints(Cannons.cannonsR))
+				{
+					List<Transform> leftCannons = new List<Transform>();
+					List<Transform> rightCannons = new List<Transform>();
+					Transform[] children = boat.GetComponentsInChildren<Transform>(true);
+					string cannonPointPrefix = Lv_body <= 3 ? "cannon_1" : Lv_body <= 9 ? "cannon_1_side_base" : "cannon_2";
+					for (int i = 0; i < children.Length; i++)
+					{
+						Transform child = children[i];
+						if (child.name != cannonPointPrefix && !child.name.StartsWith(cannonPointPrefix + " ("))
+						{
+							continue;
+						}
+						float side = boat.InverseTransformPoint(child.position).x;
+						if (side < -0.01f)
+						{
+							leftCannons.Add(child);
+						}
+						else if (side > 0.01f)
+						{
+							rightCannons.Add(child);
+						}
+					}
+					leftCannons.Sort((a, b) => boat.InverseTransformPoint(a.position).z.CompareTo(boat.InverseTransformPoint(b.position).z));
+					rightCannons.Sort((a, b) => boat.InverseTransformPoint(a.position).z.CompareTo(boat.InverseTransformPoint(b.position).z));
+					Cannons.cannonsL = leftCannons.ToArray();
+					Cannons.cannonsR = rightCannons.ToArray();
+					Debug.LogWarning("[AI_DIAG] rebuilt cannon points from active boat name=" + myT.name + " bodyLevel=" + Lv_body + " prefix=" + cannonPointPrefix + " boat=" + boat.name + " left=" + Cannons.cannonsL.Length + " right=" + Cannons.cannonsR.Length);
+				}
+				return;
+			}
+		}
 		Cannons = GetComponentInChildren<CannonParent>();
+	}
+
+	private bool HasMissingCannonPoints(Transform[] cannonPoints)
+	{
+		if (cannonPoints == null || cannonPoints.Length == 0)
+		{
+			return true;
+		}
+		for (int i = 0; i < cannonPoints.Length; i++)
+		{
+			if (cannonPoints[i] == null)
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 	private void FixedUpdate()

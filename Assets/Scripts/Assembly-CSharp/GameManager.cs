@@ -274,16 +274,9 @@ public class GameManager : MonoBehaviour
 
 	public void TempMuteBGM(bool ison)
 	{
-		if (ison)
+		if (BgmOn)
 		{
-			if (FxOn)
-			{
-				Mixer.SetFloat("FxVol", 0f);
-			}
-		}
-		else if (FxOn)
-		{
-			Mixer.SetFloat("FxVol", -80f);
+			Mixer.SetFloat("BgmVol", ison ? 0f : -80f);
 		}
 	}
 

@@ -44,7 +44,8 @@ public class Panel_Store : MonoBehaviour
 		{
 			FreeDone.SetActive(false);
 		}
-		AdsDone.SetActive(GM.noAds);
+		// AD REMOVAL: The no-ads purchase offer is unavailable, so never show its ownership badge.
+		AdsDone.SetActive(false);
 	}
 
 	private string showTime(float t)

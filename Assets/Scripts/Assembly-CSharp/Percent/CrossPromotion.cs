@@ -82,14 +82,7 @@ namespace Percent
 
 		public static void showAds(bool placeHolder = true)
 		{
-			if (instance != null)
-			{
-				instance.show();
-			}
-			else
-			{
-				Logger.error("Null Instance. showAds() will NOT be executed.");
-			}
+			// AD REMOVAL: Disable the legacy remote cross-promotion ad entry point.
 		}
 
 		private void show()
@@ -115,14 +108,7 @@ namespace Percent
 
 		public static void addShowAdsToQueue()
 		{
-			if (instance == null)
-			{
-				Logger.error("CrossPromotion is null. isInterstitialShowable return true.");
-			}
-			else
-			{
-				instance.setPrivacyCompletion();
-			}
+			// AD REMOVAL: Never enqueue an interstitial or attach it to consent completion.
 		}
 
 		private void setPrivacyCompletion()
@@ -141,57 +127,24 @@ namespace Percent
 
 		public static bool isInterstitialShowable()
 		{
-			if (instance != null)
-			{
-				return instance.interstitial.isShowable();
-			}
-			Logger.error("CrossPromotion is null. isInterstitialShowable return true.");
-			return true;
+			// AD REMOVAL: Report no cross-promotion interstitials as available.
+			return false;
 		}
 
 		public static void reportShowInterstitial()
 		{
-			instance.interstitial.stampLastShowTime();
+			// AD REMOVAL: There is no interstitial impression to record.
 		}
 
 		public static bool isEURegion()
 		{
-			if (instance.testEURegion)
-			{
-				return true;
-			}
-			string region = Util.getRegion();
-			string[] eU_CODES = PrivacyPopup.EU_CODES;
-			foreach (string text in eU_CODES)
-			{
-				if (text.Equals(region))
-				{
-					return true;
-				}
-			}
+			// AD REMOVAL: Do not expose the advertising privacy flow or collect its region data.
 			return false;
 		}
 
 		public static void showPrivacyWindow()
 		{
-			if (instance == null)
-			{
-				Logger.error("Null Instance. showAds() will NOT be executed.");
-				return;
-			}
-			if (!instance.privacyPopup.gameObject.activeSelf)
-			{
-				instance.privacyPopup.gameObject.SetActive(true);
-			}
-			if (isFirstScreen && PlayerPrefs.HasKey(PREF_AGREEMENT))
-			{
-				instance.privacyPopup.isSendTracker = false;
-				instance.privacyPopup.hideSelf();
-			}
-			else
-			{
-				instance.privacyPopup.showWindow();
-			}
+			// AD REMOVAL: The advertising SDK consent window is not shown.
 		}
 
 		public static Company getCompany()
@@ -207,6 +160,12 @@ namespace Percent
 		private void Awake()
 		{
 			instance = this;
+			// AD REMOVAL: Stop the legacy SDK before Start can initialize network loaders.
+			enabled = false;
+			if (privacyPopup != null)
+			{
+				privacyPopup.gameObject.SetActive(false);
+			}
 		}
 
 		private void Start()

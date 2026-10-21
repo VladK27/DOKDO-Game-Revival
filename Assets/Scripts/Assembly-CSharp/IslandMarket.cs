@@ -52,7 +52,7 @@ public class IslandMarket : MonoBehaviour
 		{
 			remainLabel[i].text = GM.IslandGoods[(int)GM.LastIslandNumber].goods[i].value.ToString();
 			BuyLabel[i].text = GM.MarketPrice[Tier].p[i].ToString();
-			SellLabel[i].text = ((int)(0.8f * (float)(int)GM.MarketPrice[Tier].p[i])/*cast due to constrained. prefix*/).ToString();
+			SellLabel[i].text = ((int)(0.9f * (float)(int)GM.MarketPrice[Tier].p[i])).ToString();
 			if ((int)GM.IslandGoods[(int)GM.LastIslandNumber].goods[i].value <= 0)
 			{
 				BuyMax[i].SetActive(true);

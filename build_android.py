@@ -47,12 +47,12 @@ def phase_for(line, current):
     return current
 
 
-def show_progress(phase, spinner):
+def show_progress(phase, spinner, elapsed):
     name, percent = PHASES[phase]
     width = 24
     filled = round(width * percent / 100)
     bar = "#" * filled + "-" * (width - filled)
-    sys.stdout.write(f"\r[{bar}] {name}  {spinner}")
+    sys.stdout.write(f"\r[{bar}] {name}  {elapsed:6.1f}s  {spinner}")
     sys.stdout.flush()
 
 
@@ -100,6 +100,9 @@ def main():
     print(f"Unity log: {log_path}")
     process = subprocess.Popen(command, cwd=PROJECT_DIR, env=env)
     phase = 0
+    phase_started = time.monotonic()
+    phase_times = [0.0] * len(PHASES)
+    build_started = phase_started
     spinner_chars = "|/-\\"
     spinner = 0
     log_pos = 0
@@ -116,7 +119,12 @@ def main():
                         if not line:
                             break
                         log_pos = log.tell()
-                        phase = phase_for(line, phase)
+                        next_phase = phase_for(line, phase)
+                        if next_phase > phase:
+                            now = time.monotonic()
+                            phase_times[phase] += now - phase_started
+                            phase = next_phase
+                            phase_started = now
                         if "[BUILD] result=Failed" in line or "[BUILD] EXCEPTION:" in line:
                             failure_line = line.strip()
             except (FileNotFoundError, OSError):
@@ -124,7 +132,7 @@ def main():
 
             now = time.monotonic()
             if now - last_render >= 1.5:
-                show_progress(phase, spinner_chars[spinner % len(spinner_chars)])
+                show_progress(phase, spinner_chars[spinner % len(spinner_chars)], time.monotonic() - build_started)
                 spinner += 1
                 last_render = now
             time.sleep(0.2)
@@ -136,7 +144,12 @@ def main():
                 line = log.readline()
                 if not line:
                     break
-                phase = phase_for(line, phase)
+                next_phase = phase_for(line, phase)
+                if next_phase > phase:
+                    now = time.monotonic()
+                    phase_times[phase] += now - phase_started
+                    phase = next_phase
+                    phase_started = now
                 if "[BUILD] result=Failed" in line or "[BUILD] EXCEPTION:" in line:
                     failure_line = line.strip()
     except KeyboardInterrupt:
@@ -145,8 +158,15 @@ def main():
         print("\nBuild interrupted.", file=sys.stderr)
         return 130
 
-    show_progress(phase, " ")
+    finished = time.monotonic()
+    phase_times[phase] += finished - phase_started
+    show_progress(phase, " ", finished - build_started)
     print()
+    print("Phase timing:")
+    for index, (name, _) in enumerate(PHASES):
+        if phase_times[index] > 0:
+            print(f"  {name}: {phase_times[index]:.1f}s")
+    print(f"  Total: {finished - build_started:.1f}s")
     if process.returncode != 0 or phase != 5:
         if failure_line:
             print(failure_line, file=sys.stderr)

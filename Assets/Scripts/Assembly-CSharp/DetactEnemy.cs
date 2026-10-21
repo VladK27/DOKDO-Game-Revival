@@ -18,24 +18,27 @@ public class DetactEnemy : MonoBehaviour
 
 	private void OnTriggerStay(Collider other)
 	{
-		if (other.CompareTag(Tag) && !isEnemy && !other.GetComponentInParent<Enemy_Ship>().isDead)
+		if (!isEnemy && SC != null)
 		{
-			Transform hEAD = other.GetComponentInParent<Enemy_Ship>().HEAD;
-			if (!SC.NearEnemys.Contains(hEAD))
+			Enemy_Ship enemy = other.GetComponentInParent<Enemy_Ship>();
+			bool isEnemyTarget = enemy != null && (Tag == "Enemy" || (!string.IsNullOrEmpty(Tag) && other.CompareTag(Tag)));
+			if (isEnemyTarget && !enemy.isDead && enemy.HEAD != null && !SC.NearEnemys.Contains(enemy.HEAD))
 			{
-				SC.NearEnemys.Add(hEAD);
+				SC.NearEnemys.Add(enemy.HEAD);
+				Debug.Log("[AI_DIAG] player detected enemy=" + enemy.name + " collider=" + other.name + " distance=" + Vector3.Distance(transform.position, enemy.transform.position));
 			}
 		}
 	}
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.CompareTag(Tag) && !isEnemy)
+		if (!isEnemy && SC != null)
 		{
-			Transform hEAD = other.GetComponentInParent<Enemy_Ship>().HEAD;
-			if (SC.NearEnemys.Contains(hEAD))
+			Enemy_Ship enemy = other.GetComponentInParent<Enemy_Ship>();
+			bool isEnemyTarget = enemy != null && (Tag == "Enemy" || (!string.IsNullOrEmpty(Tag) && other.CompareTag(Tag)));
+			if (isEnemyTarget && enemy.HEAD != null && SC.NearEnemys.Contains(enemy.HEAD))
 			{
-				SC.NearEnemys.Remove(hEAD);
+				SC.NearEnemys.Remove(enemy.HEAD);
 			}
 		}
 	}

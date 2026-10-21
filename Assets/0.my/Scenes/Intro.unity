@@ -1,9 +1,950 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+OcclusionCullingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: 0.25
+    backfaceThreshold: 100
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
+--- !u!196 &2
+NavMeshSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    serializedVersion: 2
+    agentTypeID: 0
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+    manualCellSize: 0
+    cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
+    accuratePlacement: 0
+    debug:
+      m_Flags: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &3
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 24}
+  m_Layer: 9
+  m_Name: WorldMap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &4
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 25}
+  m_Layer: 0
+  m_Name: InfiniteWater
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &5
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 26}
+  - component: {fileID: 38}
+  - component: {fileID: 36}
+  m_Layer: 9
+  m_Name: dokdo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &6
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 58}
+  - component: {fileID: 48}
+  - component: {fileID: 72}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &7
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 59}
+  - component: {fileID: 57}
+  - component: {fileID: 74}
+  - component: {fileID: 73}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &8
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 60}
+  - component: {fileID: 49}
+  - component: {fileID: 76}
+  - component: {fileID: 75}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &9
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 61}
+  - component: {fileID: 50}
+  - component: {fileID: 77}
+  - component: {fileID: 78}
+  m_Layer: 5
+  m_Name: Text (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &10
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 62}
+  - component: {fileID: 51}
+  - component: {fileID: 79}
+  - component: {fileID: 80}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &11
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 63}
+  - component: {fileID: 52}
+  - component: {fileID: 81}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &12
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 28}
+  - component: {fileID: 41}
+  m_Layer: 0
+  m_Name: Camera And Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &13
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 64}
+  m_Layer: 5
+  m_Name: UI Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &14
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 65}
+  - component: {fileID: 53}
+  - component: {fileID: 83}
+  - component: {fileID: 82}
+  m_Layer: 5
+  m_Name: Image (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &15
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 29}
+  - component: {fileID: 70}
+  - component: {fileID: 87}
+  - component: {fileID: 42}
+  - component: {fileID: 86}
+  - component: {fileID: 85}
+  - component: {fileID: 71}
+  - component: {fileID: 84}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &16
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 66}
+  - component: {fileID: 54}
+  - component: {fileID: 88}
+  m_Layer: 5
+  m_Name: Text (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &17
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 67}
+  - component: {fileID: 55}
+  - component: {fileID: 89}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &18
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 30}
+  - component: {fileID: 69}
+  - component: {fileID: 90}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &19
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 31}
+  - component: {fileID: 45}
+  - component: {fileID: 91}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &20
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 27}
+  - component: {fileID: 39}
+  - component: {fileID: 37}
+  - component: {fileID: 92}
+  m_Layer: 4
+  m_Name: water0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &21
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 68}
+  - component: {fileID: 56}
+  - component: {fileID: 94}
+  - component: {fileID: 93}
+  m_Layer: 5
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &22
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 32}
+  - component: {fileID: 34}
+  m_Layer: 0
+  m_Name: UICamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &23
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 33}
+  - component: {fileID: 35}
+  - component: {fileID: 46}
+  - component: {fileID: 40}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &24
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_Children:
+  - {fileID: 26}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!4 &25
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1362.4, y: 0, z: 691}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 27}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!4 &26
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 342, y: -0.09, z: 160}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_Children: []
+  m_Father: {fileID: 24}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!4 &27
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -15.5}
+  m_LocalScale: {x: 150, y: 150, z: 200}
+  m_Children: []
+  m_Father: {fileID: 25}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &28
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1364, y: 0, z: 667.51}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 31}
+  - {fileID: 33}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!4 &29
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &30
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!4 &31
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 39.2, z: -35.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 28}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 44.999996, y: -0, z: -0}
+--- !u!4 &32
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 11, z: 1}
+  m_Children: []
+  m_Father: {fileID: 59}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &33
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23}
+  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalPosition: {x: 0, y: 71.9, z: -122.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 28}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 30.000008, y: -0, z: -0}
+--- !u!20 &34
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 3
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: -100
+  far clip plane: 100
+  field of view: 60
+  orthographic: 1
+  orthographic size: 5
+  m_Depth: 1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 32
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 0
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!20 &35
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.17201275, g: 0.5529986, b: 0.9632695, a: 1}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.01
+  far clip plane: 500
+  field of view: 129.9
+  orthographic: 1
+  orthographic size: 76.9
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294931423
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 0
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 0
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!23 &36
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: be828a150f1793c47aa7deb0c076c76d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &37
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 2
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 5f47c080ff2c54d42ad5e002b53decc7, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &38
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5}
+  m_Mesh: {fileID: 4300000, guid: 42bd26abf02599942b9be97c218eb5bb, type: 2}
+--- !u!33 &39
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20}
+  m_Mesh: {fileID: 4300000, guid: 4f336fd5fb285be478894d7a6af1576d, type: 2}
+--- !u!81 &40
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23}
+  m_Enabled: 1
+--- !u!82 &41
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300008, guid: 2f45ac6a7c6af9f45a327f58fdc42252,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: afe1e62984ffa3644b79e698c82bbcd4, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.447
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &42
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300008, guid: 2f45ac6a7c6af9f45a327f58fdc42252,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!104 &44
 RenderSettings:
-  serializedVersion: 8
   m_ObjectHideFlags: 0
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -29,30 +970,99 @@ RenderSettings:
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0.067788675, g: 0.15350834, b: 0.29621837, a: 1}
+  m_UseRadianceAmbientProbe: 0
+--- !u!108 &45
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 1
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.2
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: 2
+    m_CustomResolution: -1
+    m_Strength: 0.61
+    m_Bias: 2
+    m_NormalBias: 0.576
+    m_NearPlane: 1.28
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 2
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!124 &46
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23}
+  m_Enabled: 1
 --- !u!157 &47
 LightmapSettings:
-  serializedVersion: 9
   m_ObjectHideFlags: 0
+  serializedVersion: 11
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
-    m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 8
+    serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
-    m_TextureWidth: 1024
-    m_TextureHeight: 1024
+    m_AtlasSize: 1024
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
@@ -67,10 +1077,16 @@ LightmapSettings:
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
     m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 500
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 2
+    m_PVRDenoiserTypeDirect: 0
+    m_PVRDenoiserTypeIndirect: 0
+    m_PVRDenoiserTypeAO: 0
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVRFilteringMode: 1
+    m_PVREnvironmentMIS: 0
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -78,934 +1094,93 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-  m_LightingDataAsset: {fileID: 112000000, guid: 5e28e14384840dc4d907b320c47a9ed1, type: 2}
-  m_ShadowMaskMode: 2
---- !u!1 &3
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 24}
-  m_Layer: 9
-  m_Name: WorldMap
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &4
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 25}
-  m_Layer: 0
-  m_Name: InfiniteWater
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &5
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 26}
-  - component: {fileID: 38}
-  - component: {fileID: 36}
-  m_Layer: 9
-  m_Name: dokdo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &6
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 58}
-  - component: {fileID: 48}
-  - component: {fileID: 72}
-  m_Layer: 5
-  m_Name: Image (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &7
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 59}
-  - component: {fileID: 57}
-  - component: {fileID: 74}
-  - component: {fileID: 73}
-  m_Layer: 5
-  m_Name: Canvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &8
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 60}
-  - component: {fileID: 49}
-  - component: {fileID: 76}
-  - component: {fileID: 75}
-  m_Layer: 5
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &9
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 61}
-  - component: {fileID: 50}
-  - component: {fileID: 77}
-  - component: {fileID: 78}
-  m_Layer: 5
-  m_Name: Text (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &10
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 62}
-  - component: {fileID: 51}
-  - component: {fileID: 79}
-  - component: {fileID: 80}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &11
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 63}
-  - component: {fileID: 52}
-  - component: {fileID: 81}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &12
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 28}
-  - component: {fileID: 41}
-  m_Layer: 0
-  m_Name: Camera And Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &13
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 64}
-  m_Layer: 5
-  m_Name: UI Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &14
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 65}
-  - component: {fileID: 53}
-  - component: {fileID: 83}
-  - component: {fileID: 82}
-  m_Layer: 5
-  m_Name: Image (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &15
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 29}
-  - component: {fileID: 70}
-  - component: {fileID: 87}
-  - component: {fileID: 42}
-  - component: {fileID: 86}
-  - component: {fileID: 85}
-  - component: {fileID: 71}
-  - component: {fileID: 84}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &16
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 66}
-  - component: {fileID: 54}
-  - component: {fileID: 88}
-  m_Layer: 5
-  m_Name: Text (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &17
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 67}
-  - component: {fileID: 55}
-  - component: {fileID: 89}
-  m_Layer: 5
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &18
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 30}
-  - component: {fileID: 69}
-  - component: {fileID: 90}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &19
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 31}
-  - component: {fileID: 45}
-  - component: {fileID: 91}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &20
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 27}
-  - component: {fileID: 39}
-  - component: {fileID: 37}
-  - component: {fileID: 92}
-  m_Layer: 4
-  m_Name: water0
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &21
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 68}
-  - component: {fileID: 56}
-  - component: {fileID: 94}
-  - component: {fileID: 93}
-  m_Layer: 5
-  m_Name: Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!1 &22
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 32}
-  - component: {fileID: 34}
-  m_Layer: 0
-  m_Name: UICamera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &23
-GameObject:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Component:
-  - component: {fileID: 33}
-  - component: {fileID: 35}
-  - component: {fileID: 43}
-  - component: {fileID: 46}
-  - component: {fileID: 40}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &24
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 3}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
-  m_Children:
-  - {fileID: 26}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
---- !u!4 &25
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 4}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1362.4, y: 0, z: 691}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 27}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
---- !u!4 &26
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 5}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 342, y: -0.09, z: 160}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
-  m_Children: []
-  m_Father: {fileID: 24}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
---- !u!4 &27
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 20}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15.5}
-  m_LocalScale: {x: 150, y: 150, z: 200}
-  m_Children: []
-  m_Father: {fileID: 25}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &28
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 12}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1364, y: 0, z: 667.51}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 31}
-  - {fileID: 33}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
---- !u!4 &29
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 15}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &30
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 18}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
---- !u!4 &31
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 19}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 39.2, z: -35.4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 28}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 44.999996, y: -0, z: -0}
---- !u!4 &32
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 22}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 11, z: 1}
-  m_Children: []
-  m_Father: {fileID: 59}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &33
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 23}
-  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 71.9, z: -122.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 28}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 30.000008, y: -0, z: -0}
---- !u!20 &34
-Camera:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 22}
-  m_Enabled: 1
-  m_ClearFlags: 3
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: -100
-  far clip plane: 100
-  field of view: 60
-  orthographic: 1
-  orthographic size: 5
-  m_Depth: 1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 32
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 0
-  m_AllowMSAA: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 0
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
---- !u!20 &35
-Camera:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 23}
-  m_Enabled: 1
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.17201275, g: 0.5529986, b: 0.9632695, a: 1}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.01
-  far clip plane: 500
-  field of view: 129.9
-  orthographic: 1
-  orthographic size: 76.9
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294931423
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 0
-  m_AllowMSAA: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 0
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
---- !u!23 &36
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 5}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: be828a150f1793c47aa7deb0c076c76d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!23 &37
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 20}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_MotionVectors: 2
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 5f47c080ff2c54d42ad5e002b53decc7, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &38
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 5}
-  m_Mesh: {fileID: 4300000, guid: 42bd26abf02599942b9be97c218eb5bb, type: 2}
---- !u!33 &39
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 20}
-  m_Mesh: {fileID: 4300000, guid: 4f336fd5fb285be478894d7a6af1576d, type: 2}
---- !u!81 &40
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 23}
-  m_Enabled: 1
---- !u!82 &41
-AudioSource:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 12}
-  m_Enabled: 1
-  OutputAudioMixerGroup: {fileID: 24300008, guid: 2f45ac6a7c6af9f45a327f58fdc42252, type: 2}
-  m_audioClip: {fileID: 8300000, guid: afe1e62984ffa3644b79e698c82bbcd4, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.447
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!82 &42
-AudioSource:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 15}
-  m_Enabled: 1
-  OutputAudioMixerGroup: {fileID: 24300008, guid: 2f45ac6a7c6af9f45a327f58fdc42252, type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
---- !u!92 &43
-GUILayer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 23}
-  m_Enabled: 1
---- !u!108 &45
-Light:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 19}
-  m_Enabled: 1
-  m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.2
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: 2
-    m_CustomResolution: -1
-    m_Strength: 0.61
-    m_Bias: 2
-    m_NormalBias: 0.576
-    m_NearPlane: 1.28
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 2
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!124 &46
-FlareLayer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 23}
-  m_Enabled: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
+  m_LightingDataAsset: {fileID: 112000000, guid: 5e28e14384840dc4d907b320c47a9ed1,
+    type: 2}
+  m_UseShadowmask: 1
 --- !u!222 &48
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6}
+  m_CullTransparentMesh: 0
 --- !u!222 &49
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8}
+  m_CullTransparentMesh: 0
 --- !u!222 &50
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9}
+  m_CullTransparentMesh: 0
 --- !u!222 &51
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10}
+  m_CullTransparentMesh: 0
 --- !u!222 &52
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11}
+  m_CullTransparentMesh: 0
 --- !u!222 &53
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14}
+  m_CullTransparentMesh: 0
 --- !u!222 &54
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16}
+  m_CullTransparentMesh: 0
 --- !u!222 &55
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17}
+  m_CullTransparentMesh: 0
 --- !u!222 &56
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21}
+  m_CullTransparentMesh: 0
 --- !u!223 &57
 Canvas:
-  serializedVersion: 3
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7}
   m_Enabled: 1
+  serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 34}
   m_PlaneDistance: 100
@@ -1021,11 +1196,12 @@ Canvas:
 --- !u!224 &58
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 133, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 67}
@@ -1039,28 +1215,30 @@ RectTransform:
 --- !u!224 &59
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.007080078, y: 0.007080078, z: 0.007080078}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 32}
   - {fileID: 64}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 794.4828, y: 1412.4138}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!224 &60
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1078,11 +1256,12 @@ RectTransform:
 --- !u!224 &61
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -700.2069, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.99994266, y: 0.99994266, z: 0.99994266}
   m_Children: []
   m_Father: {fileID: 67}
@@ -1096,11 +1275,12 @@ RectTransform:
 --- !u!224 &62
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -385, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 67}
@@ -1114,8 +1294,9 @@ RectTransform:
 --- !u!224 &63
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1132,8 +1313,9 @@ RectTransform:
 --- !u!224 &64
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1151,8 +1333,9 @@ RectTransform:
 --- !u!224 &65
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1169,8 +1352,9 @@ RectTransform:
 --- !u!224 &66
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1187,8 +1371,9 @@ RectTransform:
 --- !u!224 &67
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1211,8 +1396,9 @@ RectTransform:
 --- !u!224 &68
 RectTransform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1230,28 +1416,30 @@ RectTransform:
 --- !u!114 &69
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!114 &70
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa3f1a2d47bf9479853f992a9cd99dc9, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   MyCurrnetHP:
     currentCryptoKey: 444444
     hiddenValue: 444444
@@ -1387,7 +1575,7 @@ MonoBehaviour:
       b2: 133
       b3: 3
       b4: 0
-    hiddenValueOld:
+    hiddenValueOld: 
     inited: 1
     fakeValue: 0
     fakeValueActive: 0
@@ -1398,7 +1586,7 @@ MonoBehaviour:
       b2: 133
       b3: 3
       b4: 0
-    hiddenValueOld:
+    hiddenValueOld: 
     inited: 1
     fakeValue: 0
     fakeValueActive: 0
@@ -1409,7 +1597,7 @@ MonoBehaviour:
       b2: 133
       b3: 3
       b4: 0
-    hiddenValueOld:
+    hiddenValueOld: 
     inited: 1
     fakeValue: 0
     fakeValueActive: 0
@@ -1420,7 +1608,7 @@ MonoBehaviour:
       b2: 133
       b3: 3
       b4: 0
-    hiddenValueOld:
+    hiddenValueOld: 
     inited: 1
     fakeValue: 0
     fakeValueActive: 0
@@ -1431,7 +1619,7 @@ MonoBehaviour:
       b2: 133
       b3: 3
       b4: 0
-    hiddenValueOld:
+    hiddenValueOld: 
     inited: 1
     fakeValue: 0
     fakeValueActive: 0
@@ -1442,7 +1630,7 @@ MonoBehaviour:
       b2: 133
       b3: 3
       b4: 0
-    hiddenValueOld:
+    hiddenValueOld: 
     inited: 1
     fakeValue: 0
     fakeValueActive: 0
@@ -1453,7 +1641,7 @@ MonoBehaviour:
       b2: 133
       b3: 3
       b4: 0
-    hiddenValueOld:
+    hiddenValueOld: 
     inited: 1
     fakeValue: 0
     fakeValueActive: 0
@@ -1487,7 +1675,7 @@ MonoBehaviour:
     inited: 1
     fakeValue: 0
     fakeValueActive: 0
-  coinDay:
+  coinDay: 
   myResource:
   - name: Coin
     type: 0
@@ -1597,7 +1785,7 @@ MonoBehaviour:
       b2: 133
       b3: 3
       b4: 0
-    hiddenValueOld:
+    hiddenValueOld: 
     inited: 1
     fakeValue: 0
     fakeValueActive: 0
@@ -1608,7 +1796,7 @@ MonoBehaviour:
       b2: 133
       b3: 3
       b4: 0
-    hiddenValueOld:
+    hiddenValueOld: 
     inited: 1
     fakeValue: 0
     fakeValueActive: 0
@@ -1619,7 +1807,7 @@ MonoBehaviour:
       b2: 133
       b3: 3
       b4: 0
-    hiddenValueOld:
+    hiddenValueOld: 
     inited: 1
     fakeValue: 0
     fakeValueActive: 0
@@ -1630,7 +1818,7 @@ MonoBehaviour:
       b2: 133
       b3: 3
       b4: 0
-    hiddenValueOld:
+    hiddenValueOld: 
     inited: 1
     fakeValue: 0
     fakeValueActive: 0
@@ -1641,7 +1829,7 @@ MonoBehaviour:
       b2: 133
       b3: 3
       b4: 0
-    hiddenValueOld:
+    hiddenValueOld: 
     inited: 1
     fakeValue: 0
     fakeValueActive: 0
@@ -5950,571 +6138,754 @@ MonoBehaviour:
 --- !u!114 &71
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e3b730c6f9cba7c9be5c413c1aa7877, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  Language:
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Language: 
   words:
   - lang:
     - touchstart
-    - 터치해서 시작하기
+    - "\uD130\uCE58\uD574\uC11C \uC2DC\uC791\uD558\uAE30"
     - Touch To Start
-    - 觸摸開始
-    - タッチして始める
-    - Berühren um loszulegen
-    - "Нажмите  чтобы начать\r"
+    - "\u89F8\u6478\u958B\u59CB"
+    - "\u30BF\u30C3\u30C1\u3057\u3066\u59CB\u3081\u308B"
+    - "Ber\xFChren um loszulegen"
+    - "\u041A\u043E\u0441\u043D\u0438\u0442\u0435\u0441\u044C \u044D\u043A\u0440\u0430\u043D\u0430,
+      \u0447\u0442\u043E\u0431\u044B \u043D\u0430\u0447\u0430\u0442\u044C"
   - lang:
     - warning
-    - '경고 : 앱 삭제 시 데이터가 지워질 수 있습니다.'
+    - "\uACBD\uACE0 : \uC571 \uC0AD\uC81C \uC2DC \uB370\uC774\uD130\uAC00 \uC9C0\uC6CC\uC9C8
+      \uC218 \uC788\uC2B5\uB2C8\uB2E4."
     - 'WARNING : Data cannot be recovered once the app is deleted.'
-    - 警告：刪除應用程序後無法恢復數據。
-    - 警告:アプリの削除時にデータが消されることがあります。
-    - 'Warnung: Daten können beim Löschen von Anwendungen gelöscht werden.'
-    - "Предупреждение: данные не могут быть восстановлены после удаления приложения.\r"
+    - "\u8B66\u544A\uFF1A\u522A\u9664\u61C9\u7528\u7A0B\u5E8F\u5F8C\u7121\u6CD5\u6062\u5FA9\u6578\u64DA\u3002"
+    - "\u8B66\u544A:\u30A2\u30D7\u30EA\u306E\u524A\u9664\u6642\u306B\u30C7\u30FC\u30BF\u304C\u6D88\u3055\u308C\u308B\u3053\u3068\u304C\u3042\u308A\u307E\u3059\u3002"
+    - "Warnung: Daten k\xF6nnen beim L\xF6schen von Anwendungen gel\xF6scht werden."
+    - "\u0412\u043D\u0438\u043C\u0430\u043D\u0438\u0435: \u043F\u043E\u0441\u043B\u0435
+      \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u044F \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u044F
+      \u0434\u0430\u043D\u043D\u044B\u0435 \u043D\u0435\u043B\u044C\u0437\u044F \u0432\u043E\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C."
   - lang:
     - garage
-    - 선착장
+    - "\uC120\uCC29\uC7A5"
     - Dock
-    - 碼頭
-    - 船着場
+    - "\u78BC\u982D"
+    - "\u8239\u7740\u5834"
     - Pier
-    - "пирс\r"
+    - "\u041F\u043E\u0440\u0442"
   - lang:
     - market
-    - 시장
+    - "\uC2DC\uC7A5"
     - Market
-    - 市場
-    - 市場
+    - "\u5E02\u5834"
+    - "\u5E02\u5834"
     - Markt
-    - "рынок\r"
+    - "\u0420\u044B\u043D\u043E\u043A"
   - lang:
     - store
-    - 상점
+    - "\uC0C1\uC810"
     - Store
-    - 商店
-    - 商店
-    - Ein Geschäft
-    - "магазин\r"
+    - "\u5546\u5E97"
+    - "\u5546\u5E97"
+    - "Ein Gesch\xE4ft"
+    - "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
   - lang:
     - body
-    - 선체
+    - "\uC120\uCCB4"
     - Body
-    - 船殼
-    - 船体
+    - "\u8239\u6BBC"
+    - "\u8239\u4F53"
     - Rumpf
-    - "корпус\r"
+    - "\u041A\u043E\u0440\u043F\u0443\u0441"
   - lang:
     - sail
-    - 돛
+    - "\uB3DB"
     - Sail
-    - 帆
-    - 帆
+    - "\u5E06"
+    - "\u5E06"
     - Segeln
-    - "парус\r"
+    - "\u041F\u0430\u0440\u0443\u0441"
   - lang:
     - steer
-    - 선회
+    - "\uC120\uD68C"
     - Steering
-    - 車削
-    - 旋回
+    - "\u8ECA\u524A"
+    - "\u65CB\u56DE"
     - Drehen
-    - "поворот\r"
+    - "\u0420\u0443\u043B\u044C"
   - lang:
     - cannon
-    - 대포
+    - "\uB300\uD3EC"
     - Cannon
-    - 大砲
-    - 大砲
+    - "\u5927\u7832"
+    - "\u5927\u7832"
     - Kanone
-    - "пушка\r"
+    - "\u041F\u0443\u0448\u043A\u0430"
   - lang:
     - fishing
-    - 낚시
+    - "\uB09A\uC2DC"
     - Fishing
-    - 釣魚
-    - 釣り
+    - "\u91E3\u9B5A"
+    - "\u91E3\u308A"
     - Fischen
-    - "рыболовный\r"
+    - "\u0420\u044B\u0431\u0430\u043B\u043A\u0430"
   - lang:
     - upgrade
-    - 업그레이드
+    - "\uC5C5\uADF8\uB808\uC774\uB4DC"
     - UPGRADE
-    - 升級
-    - アップグレード
+    - "\u5347\u7D1A"
+    - "\u30A2\u30C3\u30D7\u30B0\u30EC\u30FC\u30C9"
     - Upgrade
-    - "апгрейд\r"
+    - "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
   - lang:
     - hp
-    - 체력
+    - "\uCCB4\uB825"
     - HP
-    - 身體素質
-    - 体力
+    - "\u8EAB\u9AD4\u7D20\u8CEA"
+    - "\u4F53\u529B"
     - HP
-    - "HP\r"
+    - "\u041F\u0440\u043E\u0447\u043D\u043E\u0441\u0442\u044C"
   - lang:
     - speed
-    - 속도
+    - "\uC18D\uB3C4"
     - Speed
-    - 速度
-    - 速度
+    - "\u901F\u5EA6"
+    - "\u901F\u5EA6"
     - Speed
-    - "Speed\r"
+    - "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C"
   - lang:
     - turn
-    - 회전
+    - "\uD68C\uC804"
     - Turning
-    - 迴轉
-    - 回転
+    - "\u8FF4\u8F49"
+    - "\u56DE\u8EE2"
     - Turning
-    - "Turning\r"
+    - "\u041C\u0430\u043D\u0451\u0432\u0440\u0435\u043D\u043D\u043E\u0441\u0442\u044C"
   - lang:
     - damage
-    - 공격력
+    - "\uACF5\uACA9\uB825"
     - Damage
-    - 攻擊力
-    - 攻撃力
+    - "\u653B\u64CA\u529B"
+    - "\u653B\u6483\u529B"
     - Damage
-    - "Damage\r"
+    - "\u0423\u0440\u043E\u043D"
   - lang:
     - catch
-    - 어획량
+    - "\uC5B4\uD68D\uB7C9"
     - Catch
-    - 捕撈量
-    - 漁獲量
+    - "\u6355\u6488\u91CF"
+    - "\u6F01\u7372\u91CF"
     - Catch
-    - "Catch\r"
+    - "\u0423\u043B\u043E\u0432"
   - lang:
     - nextreset
-    - 다음 초기화
+    - "\uB2E4\uC74C \uCD08\uAE30\uD654"
     - Next Reset
-    - 接下來初始化
-    - 次の初期化
+    - "\u63A5\u4E0B\u4F86\u521D\u59CB\u5316"
+    - "\u6B21\u306E\u521D\u671F\u5316"
     - Next Reset
-    - "Next Reset\r"
+    - "\u0414\u043E \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u044F"
   - lang:
     - maxlevel
-    - 최대치
+    - "\uCD5C\uB300\uCE58"
     - MAX LEVEL
-    - 最大
-    - 最大値
+    - "\u6700\u5927"
+    - "\u6700\u5927\u5024"
     - Maximalwert
-    - "максимальная\r"
+    - "\u041C\u0430\u043A\u0441. \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
   - lang:
     - buy
-    - 구매
+    - "\uAD6C\uB9E4"
     - BUY
-    - 購買
-    - 購買
+    - "\u8CFC\u8CB7"
+    - "\u8CFC\u8CB7"
     - Einkauf
-    - "покупка\r"
+    - "\u041A\u0443\u043F\u0438\u0442\u044C"
   - lang:
     - sell
-    - 판매
+    - "\uD310\uB9E4"
     - SELL
-    - 拍賣
-    - 販売
+    - "\u62CD\u8CE3"
+    - "\u8CA9\u58F2"
     - Verkauf
-    - "аукцион\r"
+    - "\u041F\u0440\u043E\u0434\u0430\u0442\u044C"
   - lang:
     - soldout
-    - 재고 부족
+    - "\uC7AC\uACE0 \uBD80\uC871"
     - SOLD OUT
-    - 缺貨
-    - 在庫不足
+    - "\u7F3A\u8CA8"
+    - "\u5728\u5EAB\u4E0D\u8DB3"
     - Lagerknappheit
-    - "Нет в наличии\r"
+    - "\u041D\u0435\u0442 \u0432 \u043D\u0430\u043B\u0438\u0447\u0438\u0438"
   - lang:
     - notenough
-    - 자원이 없습니다.
+    - "\uC790\uC6D0\uC774 \uC5C6\uC2B5\uB2C8\uB2E4."
     - NOT ENOUGH
-    - 找不到資源
-    - 資源がありません。
+    - "\u627E\u4E0D\u5230\u8CC7\u6E90"
+    - "\u8CC7\u6E90\u304C\u3042\u308A\u307E\u305B\u3093\u3002"
     - Ich habe keine Ressourcen.
-    - "Не удается найти ресурсы\r"
+    - "\u041D\u0435\u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E \u0440\u0435\u0441\u0443\u0440\u0441\u043E\u0432"
   - lang:
     - tip
-    - '팁 : 누르고 있으면 자동으로 판매 또는 구매 할 수 있습니다.'
+    - "\uD301 : \uB204\uB974\uACE0 \uC788\uC73C\uBA74 \uC790\uB3D9\uC73C\uB85C \uD310\uB9E4
+      \uB610\uB294 \uAD6C\uB9E4 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
     - 'TIP : Hold to Auto Selling or Buying'
-    - 提示：按住可自動出售或購買。
-    - チップ:押していれば自動で販売、または購入できます。
-    - 'Chip: Sie können es automatisch verkaufen oder kaufen  wenn Sie es drücken.'
-    - "Совет. Нажмите и удерживайте  чтобы продать или купить автоматически.\r"
+    - "\u63D0\u793A\uFF1A\u6309\u4F4F\u53EF\u81EA\u52D5\u51FA\u552E\u6216\u8CFC\u8CB7\u3002"
+    - "\u30C1\u30C3\u30D7:\u62BC\u3057\u3066\u3044\u308C\u3070\u81EA\u52D5\u3067\u8CA9\u58F2\u3001\u307E\u305F\u306F\u8CFC\u5165\u3067\u304D\u307E\u3059\u3002"
+    - "Chip: Sie k\xF6nnen es automatisch verkaufen oder kaufen  wenn Sie es dr\xFCcken."
+    - "\u0421\u043E\u0432\u0435\u0442: \u043D\u0430\u0436\u043C\u0438\u0442\u0435
+      \u0438 \u0443\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435 \u043F\u0440\u0435\u0434\u043C\u0435\u0442,
+      \u0447\u0442\u043E\u0431\u044B \u0431\u044B\u0441\u0442\u0440\u043E \u043A\u0443\u043F\u0438\u0442\u044C
+      \u0438\u043B\u0438 \u043F\u0440\u043E\u0434\u0430\u0442\u044C \u0435\u0433\u043E."
   - lang:
     - freecoin
-    - 무료 코인
+    - "\uBB34\uB8CC \uCF54\uC778"
     - Free Coin
-    - 免費硬幣
-    - 無料コイン
-    - Kostenlose Münzen
-    - "Бесплатные монеты\r"
+    - "\u514D\u8CBB\u786C\u5E63"
+    - "\u7121\u6599\u30B3\u30A4\u30F3"
+    - "Kostenlose M\xFCnzen"
+    - "\u0411\u0435\u0441\u043F\u043B\u0430\u0442\u043D\u044B\u0435 \u043C\u043E\u043D\u0435\u0442\u044B"
   - lang:
     - noads
-    - 모든 광고 제거
+    - "\uBAA8\uB4E0 \uAD11\uACE0 \uC81C\uAC70"
     - ALL Ads Free
-    - 移除所有廣告
-    - すべての広告除去
+    - "\u79FB\u9664\u6240\u6709\u5EE3\u544A"
+    - "\u3059\u3079\u3066\u306E\u5E83\u544A\u9664\u53BB"
     - Alle Anzeigen entfernen
-    - "Удалить все объявления\r"
+    - "\u041E\u0442\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u043A\u043B\u0430\u043C\u0443"
   - lang:
     - restore
-    - 구매 복원
+    - "\uAD6C\uB9E4 \uBCF5\uC6D0"
     - Restore
-    - 恢復購買
-    - 購買復元
+    - "\u6062\u5FA9\u8CFC\u8CB7"
+    - "\u8CFC\u8CB7\u5FA9\u5143"
     - Restaurierung kaufen
-    - "Купить резюме\r"
+    - "\u0412\u043E\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C \u043F\u043E\u043A\u0443\u043F\u043A\u0438"
   - lang:
     - tu_move
-    - 움직이는 법
+    - "\uC6C0\uC9C1\uC774\uB294 \uBC95"
     - How to Move
-    - 如何移動
-    - 動く法
+    - "\u5982\u4F55\u79FB\u52D5"
+    - "\u52D5\u304F\u6CD5"
     - Bewegungsrecht
-    - "Как двигаться\r"
+    - "\u041A\u0430\u043A \u0443\u043F\u0440\u0430\u0432\u043B\u044F\u0442\u044C
+      \u043A\u043E\u0440\u0430\u0431\u043B\u0451\u043C"
   - lang:
     - tu_drag1
-    - 드래그
+    - "\uB4DC\uB798\uADF8"
     - DRAG
-    - 拖
-    - ドラッグ
+    - "\u62D6"
+    - "\u30C9\u30E9\u30C3\u30B0"
     - Ziehen
-    - "лобовое сопротивление\r"
+    - "\u041F\u0440\u043E\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0430\u043B\u044C\u0446\u0435\u043C
+      \u043F\u043E \u044D\u043A\u0440\u0430\u043D\u0443"
   - lang:
     - tu_drag2
-    - 드래그 한 방향으로 배가 이동합니다.
+    - "\uB4DC\uB798\uADF8 \uD55C \uBC29\uD5A5\uC73C\uB85C \uBC30\uAC00 \uC774\uB3D9\uD569\uB2C8\uB2E4."
     - Rotate and Move
-    - 船沿著你拖動的方向移動。
-    - ドラッグの一方向で船が移動します。
+    - "\u8239\u6CBF\u8457\u4F60\u62D6\u52D5\u7684\u65B9\u5411\u79FB\u52D5\u3002"
+    - "\u30C9\u30E9\u30C3\u30B0\u306E\u4E00\u65B9\u5411\u3067\u8239\u304C\u79FB\u52D5\u3057\u307E\u3059\u3002"
     - Das Schiff bewegt sich in eine Richtung des Widerstands.
-    - "Лодка движется в направлении  которое вы тащили.\r"
+    - "\u041A\u043E\u0440\u0430\u0431\u043B\u044C \u043F\u043B\u044B\u0432\u0451\u0442
+      \u0432 \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0438 \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F
+      \u043F\u0430\u043B\u044C\u0446\u0430."
   - lang:
     - tu_tap1
-    - 더블 탭
+    - "\uB354\uBE14 \uD0ED"
     - Double Tap
-    - 雙擊
-    - ダブルタブ
+    - "\u96D9\u64CA"
+    - "\u30C0\u30D6\u30EB\u30BF\u30D6"
     - Doppelter Tab
-    - "Дважды щелкните\r"
+    - "\u0414\u0432\u0430\u0436\u0434\u044B \u043A\u043E\u0441\u043D\u0438\u0442\u0435\u0441\u044C
+      \u044D\u043A\u0440\u0430\u043D\u0430"
   - lang:
     - tu_tap2
-    - 더블탭 한 방향으로 자동 이동합니다.
+    - "\uB354\uBE14\uD0ED \uD55C \uBC29\uD5A5\uC73C\uB85C \uC790\uB3D9 \uC774\uB3D9\uD569\uB2C8\uB2E4."
     - Go that way
-    - 雙擊自動沿一個方向移動。
-    - ダブルタップ、一方向に自動移動します。
+    - "\u96D9\u64CA\u81EA\u52D5\u6CBF\u4E00\u500B\u65B9\u5411\u79FB\u52D5\u3002"
+    - "\u30C0\u30D6\u30EB\u30BF\u30C3\u30D7\u3001\u4E00\u65B9\u5411\u306B\u81EA\u52D5\u79FB\u52D5\u3057\u307E\u3059\u3002"
     - Doppeltippen  automatisch in eine Richtung bewegen.
-    - "Двойной щелчок автоматически перемещается в одном направлении.\r"
+    - "\u0414\u0432\u0430\u0436\u0434\u044B \u043A\u043E\u0441\u043D\u0438\u0442\u0435\u0441\u044C
+      \u044D\u043A\u0440\u0430\u043D\u0430, \u0447\u0442\u043E\u0431\u044B \u043A\u043E\u0440\u0430\u0431\u043B\u044C
+      \u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u043B \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u0435
+      \u0432 \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u043E\u043C \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0438."
   - lang:
     - tu_mode
-    - 플레이 방법
+    - "\uD50C\uB808\uC774 \uBC29\uBC95"
     - Play Mode
-    - 如何玩
-    - プレー方法
+    - "\u5982\u4F55\u73A9"
+    - "\u30D7\u30EC\u30FC\u65B9\u6CD5"
     - Spielmethode
-    - "Как играть\r"
+    - "\u041A\u0430\u043A \u0438\u0433\u0440\u0430\u0442\u044C"
   - lang:
     - tu_fish1
-    - 낚시
+    - "\uB09A\uC2DC"
     - Fishing Mode
-    - 釣魚
-    - 釣り
+    - "\u91E3\u9B5A"
+    - "\u91E3\u308A"
     - Fischen
-    - "рыболовный\r"
+    - "\u0420\u044B\u0431\u0430\u043B\u043A\u0430"
   - lang:
     - tu_fish2
-    - 점령한 섬 근처에서 자동으로 낚시합니다.
+    - "\uC810\uB839\uD55C \uC12C \uADFC\uCC98\uC5D0\uC11C \uC790\uB3D9\uC73C\uB85C
+      \uB09A\uC2DC\uD569\uB2C8\uB2E4."
     - Auto Fishing Near your Island
-    - 我們會在被佔領的島嶼附近自動捕魚。
-    - 占領した島の近くで自動的に釣りします。
-    - Wir werden automatisch in der Nähe der besetzten Insel fischen.
-    - "Мы будем автоматически ловить рыбу вблизи оккупированных островов.\r"
+    - "\u6211\u5011\u6703\u5728\u88AB\u4F54\u9818\u7684\u5CF6\u5DBC\u9644\u8FD1\u81EA\u52D5\u6355\u9B5A\u3002"
+    - "\u5360\u9818\u3057\u305F\u5CF6\u306E\u8FD1\u304F\u3067\u81EA\u52D5\u7684\u306B\u91E3\u308A\u3057\u307E\u3059\u3002"
+    - "Wir werden automatisch in der N\xE4he der besetzten Insel fischen."
+    - "\u0423 \u0437\u0430\u0445\u0432\u0430\u0447\u0435\u043D\u043D\u044B\u0445
+      \u043E\u0441\u0442\u0440\u043E\u0432\u043E\u0432 \u043A\u043E\u0440\u0430\u0431\u043B\u044C
+      \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0438
+      \u043B\u043E\u0432\u0438\u0442 \u0440\u044B\u0431\u0443."
   - lang:
     - tu_fight1
-    - 전투
+    - "\uC804\uD22C"
     - Fight Mode
-    - 戰鬥
-    - 戦闘
+    - "\u6230\u9B25"
+    - "\u6226\u95D8"
     - Schlacht
-    - "бой\r"
+    - "\u0421\u0440\u0430\u0436\u0435\u043D\u0438\u0435"
   - lang:
     - tu_fight2
-    - 적이 근처에 있으면 자동으로 공격합니다.
+    - "\uC801\uC774 \uADFC\uCC98\uC5D0 \uC788\uC73C\uBA74 \uC790\uB3D9\uC73C\uB85C
+      \uACF5\uACA9\uD569\uB2C8\uB2E4."
     - Win and Get Islands
-    - 如果敵人在附近，它會自動攻擊。
-    - 敵が近くにある場合、自動的に攻撃します。
-    - Wenn sich Feinde in der Nähe befinden  greifen sie automatisch an.
-    - "Если враг находится поблизости  он автоматически атакует.\r"
+    - "\u5982\u679C\u6575\u4EBA\u5728\u9644\u8FD1\uFF0C\u5B83\u6703\u81EA\u52D5\u653B\u64CA\u3002"
+    - "\u6575\u304C\u8FD1\u304F\u306B\u3042\u308B\u5834\u5408\u3001\u81EA\u52D5\u7684\u306B\u653B\u6483\u3057\u307E\u3059\u3002"
+    - "Wenn sich Feinde in der N\xE4he befinden  greifen sie automatisch an."
+    - "\u0415\u0441\u043B\u0438 \u0440\u044F\u0434\u043E\u043C \u043F\u043E\u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F
+      \u0432\u0440\u0430\u0433, \u043A\u043E\u0440\u0430\u0431\u043B\u044C \u0430\u0442\u0430\u043A\u0443\u0435\u0442
+      \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0438."
   - lang:
     - select_flag
-    - 깃발을 선택하세요.
+    - "\uAE43\uBC1C\uC744 \uC120\uD0DD\uD558\uC138\uC694."
     - Select Your Flag
-    - 請選擇一個標誌。
-    - 旗を選択してください。
-    - Bitte wählen Sie eine Flagge.
-    - "Выберите логотип.\r"
+    - "\u8ACB\u9078\u64C7\u4E00\u500B\u6A19\u8A8C\u3002"
+    - "\u65D7\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002"
+    - "Bitte w\xE4hlen Sie eine Flagge."
+    - "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0444\u043B\u0430\u0433
+      \u043A\u043E\u0440\u0430\u0431\u043B\u044F."
   - lang:
     - start
-    - 시작
+    - "\uC2DC\uC791"
     - START
-    - 入門
-    - 開始
+    - "\u5165\u9580"
+    - "\u958B\u59CB"
     - Start
-    - "Начало работы\r"
+    - "\u041D\u0430\u0447\u0430\u0442\u044C \u0438\u0433\u0440\u0443"
   - lang:
     - welcome
-    - 점령 성공
+    - "\uC810\uB839 \uC131\uACF5"
     - Welcome to
-    - 佔領成功
-    - 占領成功
+    - "\u4F54\u9818\u6210\u529F"
+    - "\u5360\u9818\u6210\u529F"
     - Erfolgreich besetzt
-    - "Профессия успеха\r"
+    - "\u0414\u043E\u0431\u0440\u043E \u043F\u043E\u0436\u0430\u043B\u043E\u0432\u0430\u0442\u044C!"
   - lang:
     - get
-    - 획득
+    - "\uD68D\uB4DD"
     - GET
-    - 獲得
-    - 獲得
+    - "\u7372\u5F97"
+    - "\u7372\u5F97"
     - Erwerb
-    - "получить\r"
+    - "\u0417\u0430\u0431\u0440\u0430\u0442\u044C"
   - lang:
     - destroy
-    - 당신의 배가 파괴되었습니다.
+    - "\uB2F9\uC2E0\uC758 \uBC30\uAC00 \uD30C\uAD34\uB418\uC5C8\uC2B5\uB2C8\uB2E4."
     - Your Ship was destroyed
-    - 你的船被毀了
-    - あなたの船が破壊されました。
-    - Dein Schiff wurde zerstört.
-    - "Ваш корабль уничтожен\r"
+    - "\u4F60\u7684\u8239\u88AB\u6BC0\u4E86"
+    - "\u3042\u306A\u305F\u306E\u8239\u304C\u7834\u58CA\u3055\u308C\u307E\u3057\u305F\u3002"
+    - "Dein Schiff wurde zerst\xF6rt."
+    - "\u0412\u0430\u0448 \u043A\u043E\u0440\u0430\u0431\u043B\u044C \u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0435\u043D."
   - lang:
     - goisland
-    - 마지막 섬으로 돌아가기
+    - "\uB9C8\uC9C0\uB9C9 \uC12C\uC73C\uB85C \uB3CC\uC544\uAC00\uAE30"
     - Go To Last Island
-    - 回到最後一個島
-    - 最後の島に戻る
-    - Zurück zur letzten Insel
-    - "Вернуться на последний остров\r"
+    - "\u56DE\u5230\u6700\u5F8C\u4E00\u500B\u5CF6"
+    - "\u6700\u5F8C\u306E\u5CF6\u306B\u623B\u308B"
+    - "Zur\xFCck zur letzten Insel"
+    - "\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0441\u044F \u043D\u0430 \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0439
+      \u043F\u043E\u0441\u0435\u0449\u0451\u043D\u043D\u044B\u0439 \u043E\u0441\u0442\u0440\u043E\u0432."
   - lang:
     - restart_ads
-    - +<color=#FFC300FF>30%</color> 체력 회복
+    - "+<color=#FFC300FF>30%</color> \uCCB4\uB825 \uD68C\uBCF5"
     - +Recovery <color=#FFC300FF>30%</color> HP
-    - +<color=#FFC300FF>30％</color>恢復體力
-    - +<color=#FFC300FF>30%</color>体力回復
+    - "+<color=#FFC300FF>30\uFF05</color>\u6062\u5FA9\u9AD4\u529B"
+    - "+<color=#FFC300FF>30%</color>\u4F53\u529B\u56DE\u5FA9"
     - +<color=#FFC300FF> 30% </color>Heilung
-    - "+<color=#FFC300FF> 30% </color>восстановления\r"
+    - "+<color=#FFC300FF>30%</color> \u043F\u0440\u043E\u0447\u043D\u043E\u0441\u0442\u0438
+      \u043A\u043E\u0440\u043F\u0443\u0441\u0430"
   - lang:
     - restart_coin
-    - '<color=#FFC300FF>100%</color> 체력 부활'
+    - "<color=#FFC300FF>100%</color> \uCCB4\uB825 \uBD80\uD65C"
     - Restart Here with <color=#FFC300FF>100%</color> HP
-    - '<color=#FFC300FF>100％</color>復活'
-    - '<color=#FFC300FF>100%</color>体力復活'
-    - '<color=#FFC300FF>100% </color> Wiederbelebung der physikalischen Stärke'
-    - "<color=#FFC300FF>100% </color>  Воскрешение\r"
+    - "<color=#FFC300FF>100\uFF05</color>\u5FA9\u6D3B"
+    - "<color=#FFC300FF>100%</color>\u4F53\u529B\u5FA9\u6D3B"
+    - "<color=#FFC300FF>100% </color> Wiederbelebung der physikalischen St\xE4rke"
+    - "\u0412\u043E\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C <color=#FFC300FF>100%</color>
+      \u043F\u0440\u043E\u0447\u043D\u043E\u0441\u0442\u0438"
   - lang:
     - cong
-    - 축하합니다!
+    - "\uCD95\uD558\uD569\uB2C8\uB2E4!"
     - Congratulation!
-    - 恭喜！
-    - おめでとうございます!
-    - Herzlichen Glückwunsch!
-    - "Поздравляем!\r"
+    - "\u606D\u559C\uFF01"
+    - "\u304A\u3081\u3067\u3068\u3046\u3054\u3056\u3044\u307E\u3059!"
+    - "Herzlichen Gl\xFCckwunsch!"
+    - "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   - lang:
     - ending1
-    - 모든 섬을 점령하였습니다.
+    - "\uBAA8\uB4E0 \uC12C\uC744 \uC810\uB839\uD558\uC600\uC2B5\uB2C8\uB2E4."
     - You Got All Islands!
-    - 所有的島嶼都被佔領。
-    - 全ての島々を占領しました。
+    - "\u6240\u6709\u7684\u5CF6\u5DBC\u90FD\u88AB\u4F54\u9818\u3002"
+    - "\u5168\u3066\u306E\u5CF6\u3005\u3092\u5360\u9818\u3057\u307E\u3057\u305F\u3002"
     - Wir besetzten alle Inseln.
-    - "Все острова заняты.\r"
+    - "\u0412\u044B \u0437\u0430\u0445\u0432\u0430\u0442\u0438\u043B\u0438 \u0432\u0441\u0435
+      \u043E\u0441\u0442\u0440\u043E\u0432\u0430!"
   - lang:
     - wait
-    - 다음 지역으로 이동해보세요!
+    - "\uB2E4\uC74C \uC9C0\uC5ED\uC73C\uB85C \uC774\uB3D9\uD574\uBCF4\uC138\uC694!"
     - Please go to the next area!
-    - 請去下一個區域！
-    - 次のエリアに行ってください！
-    - Bitte gehe in den nächsten Bereich!
-    - "Пожалуйста  перейдите к следующей области!\r"
+    - "\u8ACB\u53BB\u4E0B\u4E00\u500B\u5340\u57DF\uFF01"
+    - "\u6B21\u306E\u30A8\u30EA\u30A2\u306B\u884C\u3063\u3066\u304F\u3060\u3055\u3044\uFF01"
+    - "Bitte gehe in den n\xE4chsten Bereich!"
+    - "\u041F\u043B\u044B\u0432\u0438\u0442\u0435 \u0432 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439
+      \u0440\u0430\u0439\u043E\u043D!"
   - lang:
     - set_des
-    - 경로 지정
+    - "\uACBD\uB85C \uC9C0\uC815"
     - Set Destination
-    - 指定路徑
-    - 経路指定
+    - "\u6307\u5B9A\u8DEF\u5F91"
+    - "\u7D4C\u8DEF\u6307\u5B9A"
     - Routing
-    - "Укажите путь\r"
+    - "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043F\u0443\u043D\u043A\u0442
+      \u043D\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u044F."
   - lang:
     - reward
-    - 보상
+    - "\uBCF4\uC0C1"
     - REWARD
-    - 賠償金
-    - 補償
-    - Entschädigung
-    - "компенсация\r"
+    - "\u8CE0\u511F\u91D1"
+    - "\u88DC\u511F"
+    - "Entsch\xE4digung"
+    - "\u041D\u0430\u0433\u0440\u0430\u0434\u0430"
   - lang:
     - repair
-    - 수리 중
+    - "\uC218\uB9AC \uC911"
     - Repairing
-    - 正在修理
-    - 修理中
+    - "\u6B63\u5728\u4FEE\u7406"
+    - "\u4FEE\u7406\u4E2D"
     - In Reparatur
-    - "ремонтируется\r"
+    - "\u0420\u0435\u043C\u043E\u043D\u0442"
   - lang:
     - assistant
-    - 조수
+    - "\uC870\uC218"
     - Assistant
-    - 助理
-    - 助手
+    - "\u52A9\u7406"
+    - "\u52A9\u624B"
     - Assistent
-    - "помощник\r"
+    - "\u041F\u043E\u043C\u043E\u0449\u043D\u0438\u043A"
   - lang:
     - marketprice
-    - 시세
+    - "\uC2DC\uC138"
     - Market Price
-    - 時勢
-    - 相場
+    - "\u6642\u52E2"
+    - "\u76F8\u5834"
     - Marktpreis
-    - "Текущая ситуация\r"
+    - "\u0414\u043E \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u044F
+      \u0440\u044B\u043D\u043A\u0430"
   - lang:
     - revival
-    - 부활
+    - "\uBD80\uD65C"
     - Revival
-    - 復活
-    - 復活
+    - "\uF966\u6D3B"
+    - "\u5FA9\u6D3B"
     - Auferstehung
-    - "воскрешение\r"
+    - "\u0412\u043E\u0437\u0440\u043E\u0436\u0434\u0435\u043D\u0438\u0435"
   - lang:
     - cloud_save
-    - 저장하기
+    - "\uC800\uC7A5\uD558\uAE30"
     - Save
-    - 保存
-    - 保存する
+    - "\u4FDD\u5B58"
+    - "\u4FDD\u5B58\u3059\u308B"
     - Speichern
-    - "Сохранить\r"
+    - "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0432 \u043E\u0431\u043B\u0430\u043A\u0435"
   - lang:
     - cloud_load
-    - 불러오기
+    - "\uBD88\uB7EC\uC624\uAE30"
     - Load
-    - 加載
-    - 呼ぶこと
+    - "\u52A0\u8F09"
+    - "\u547C\u3076\u3053\u3068"
     - Anrufen
-    - "нагрузка\r"
+    - "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C \u0438\u0437 \u043E\u0431\u043B\u0430\u043A\u0430"
   - lang:
     - cloud_save_success
-    - 클라우드 저장에 성공하였습니다.
+    - "\uD074\uB77C\uC6B0\uB4DC \uC800\uC7A5\uC5D0 \uC131\uACF5\uD558\uC600\uC2B5\uB2C8\uB2E4."
     - Cloud Save success!
-    - 雲端儲存成功！
-    - クラウドの貯蔵に成功しました。
+    - "\u96F2\u7AEF\u5132\u5B58\u6210\u529F\uFF01"
+    - "\u30AF\u30E9\u30A6\u30C9\u306E\u8CAF\u8535\u306B\u6210\u529F\u3057\u307E\u3057\u305F\u3002"
     - Erfolgreiche Speicherung der Cloud.
-    - "Успех облачного хранения!\r"
+    - "\u0418\u0433\u0440\u0430 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0430
+      \u0432 \u043E\u0431\u043B\u0430\u043A\u0435."
   - lang:
     - cloud_save_fail
-    - 클라우드 저장 실패!
+    - "\uD074\uB77C\uC6B0\uB4DC \uC800\uC7A5 \uC2E4\uD328!"
     - Failed to save to cloud!
-    - 無法保存到雲端！
-    - クラウド保存失敗。
+    - "\u7121\u6CD5\u4FDD\u5B58\u5230\u96F2\u7AEF\uFF01"
+    - "\u30AF\u30E9\u30A6\u30C9\u4FDD\u5B58\u5931\u6557\u3002"
     - Cloud Save fehlgeschlagen.
-    - "Не удается сохранить в облаке!\r"
+    - "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0441\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C
+      \u0438\u0433\u0440\u0443 \u0432 \u043E\u0431\u043B\u0430\u043A\u0435."
   - lang:
     - cloud_load_fail
-    - 클라우드 불러오기 실패!
+    - "\uD074\uB77C\uC6B0\uB4DC \uBD88\uB7EC\uC624\uAE30 \uC2E4\uD328!"
     - Failed to load!
-    - 無法加載！
-    - クラウド読み込み、失敗。
+    - "\u7121\u6CD5\u52A0\u8F09\uFF01"
+    - "\u30AF\u30E9\u30A6\u30C9\u8AAD\u307F\u8FBC\u307F\u3001\u5931\u6557\u3002"
     - Cloud-Laden  Fehler.
-    - "Невозможно загрузить!\r"
+    - "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C
+      \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435 \u0438\u0437 \u043E\u0431\u043B\u0430\u043A\u0430."
   - lang:
     - cloud_backup
-    - 클라우드 백업
+    - "\uD074\uB77C\uC6B0\uB4DC \uBC31\uC5C5"
     - Cloud Back Up
-    - 雲備份
-    - クラウドバックアップ
+    - "\u96F2\u5099\u4EFD"
+    - "\u30AF\u30E9\u30A6\u30C9\u30D0\u30C3\u30AF\u30A2\u30C3\u30D7"
     - Cloud-Backup
-    - "Предоставление облаков\r"
+    - "\u0420\u0435\u0437\u0435\u0440\u0432\u043D\u0430\u044F \u043A\u043E\u043F\u0438\u044F
+      \u0432 \u043E\u0431\u043B\u0430\u043A\u0435"
   - lang:
     - daily_reward
-    - 일일 보상
+    - "\uC77C\uC77C \uBCF4\uC0C1"
     - Daily Reward
-    - 每日獎勵
-    - 毎日補償
-    - Tägliche Vergütung
-    - "Ежедневные награды\r"
+    - "\u6BCF\u65E5\u734E\u52F5"
+    - "\u6BCE\u65E5\u88DC\u511F"
+    - "T\xE4gliche Verg\xFCtung"
+    - "\u0415\u0436\u0435\u0434\u043D\u0435\u0432\u043D\u0430\u044F \u043D\u0430\u0433\u0440\u0430\u0434\u0430"
   - lang:
     - re_reward
-    - 재접속 보상
+    - "\uC7AC\uC811\uC18D \uBCF4\uC0C1"
     - Reconnection reward
-    - 重新連結獎勵
-    - 再接続補償
+    - "\u91CD\u65B0\u9023\u7D50\u734E\u52F5"
+    - "\u518D\u63A5\u7D9A\u88DC\u511F"
     - Wiederanschlusskompensation
-    - "Поднимите награды\r"
+    - "\u041D\u0430\u0433\u0440\u0430\u0434\u0430 \u0437\u0430 \u0432\u0440\u0435\u043C\u044F
+      \u043E\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u044F"
   - lang:
     - tip1
-    - 해적선은 다른 배들보다 빠릅니다.
+    - "\uD574\uC801\uC120\uC740 \uB2E4\uB978 \uBC30\uB4E4\uBCF4\uB2E4 \uBE60\uB985\uB2C8\uB2E4."
     - Pirate ships are faster than other ships.
-    - 海盜船比其他船舶要快。
-    - 海賊船は他の船より早いです。
+    - "\u6D77\u76DC\u8239\u6BD4\u5176\u4ED6\u8239\u8236\u8981\u5FEB\u3002"
+    - "\u6D77\u8CCA\u8239\u306F\u4ED6\u306E\u8239\u3088\u308A\u65E9\u3044\u3067\u3059\u3002"
     - Piratenschiffe sind schneller als andere Schiffe.
-    - "Corsair быстрее  чем другие корабли.\r"
+    - "\u041F\u0438\u0440\u0430\u0442\u0441\u043A\u0438\u0435 \u043A\u043E\u0440\u0430\u0431\u043B\u0438
+      \u0431\u044B\u0441\u0442\u0440\u0435\u0435 \u043E\u0431\u044B\u0447\u043D\u044B\u0445
+      \u043A\u043E\u0440\u0430\u0431\u043B\u0435\u0439."
   - lang:
     - tip2
-    - 어획량은 점점 줄어듭니다. 섬에 방문하면 초기화 됩니다.
+    - "\uC5B4\uD68D\uB7C9\uC740 \uC810\uC810 \uC904\uC5B4\uB4ED\uB2C8\uB2E4. \uC12C\uC5D0
+      \uBC29\uBB38\uD558\uBA74 \uCD08\uAE30\uD654 \uB429\uB2C8\uB2E4."
     - The catch is getting smaller. It is reset when you visit the island.
-    - 捕魚量逐漸減少。 訪問島上的話就會變成初始化狀態。
-    - 漁獲量はますます小さくなります。 島に訪問したら初期化されます。
-    - Der Fang wird kleiner und kleiner. Sobald Sie die Insel besucht haben  wird sie initialisiert.
-    - "Количество рыбной ловли уменьшается. Если вы посетите остров  он будет инициализирован.\r"
+    - "\u6355\u9B5A\u91CF\u9010\u6F38\u6E1B\u5C11\u3002 \u8A2A\u554F\u5CF6\u4E0A\u7684\u8A71\u5C31\u6703\u8B8A\u6210\u521D\u59CB\u5316\u72C0\u614B\u3002"
+    - "\u6F01\u7372\u91CF\u306F\u307E\u3059\u307E\u3059\u5C0F\u3055\u304F\u306A\u308A\u307E\u3059\u3002
+      \u5CF6\u306B\u8A2A\u554F\u3057\u305F\u3089\u521D\u671F\u5316\u3055\u308C\u307E\u3059\u3002"
+    - Der Fang wird kleiner und kleiner. Sobald Sie die Insel besucht haben  wird
+      sie initialisiert.
+    - "\u0421\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0435\u043C \u0443\u043B\u043E\u0432
+      \u0443\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442\u0441\u044F. \u041F\u043E\u0441\u0435\u0442\u0438\u0442\u0435
+      \u043E\u0441\u0442\u0440\u043E\u0432, \u0447\u0442\u043E\u0431\u044B \u0432\u043E\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C
+      \u0435\u0433\u043E."
+  - lang:
+    - monitor_purchase_success
+    - "\uAD6C\uB9E4 \uC131\uACF5"
+    - Purchase successful
+    - "\u8CFC\u8CB7\u6210\u529F"
+    - "\u8CFC\u5165\u6210\u529F"
+    - Kauf erfolgreich
+    - "\u041F\u043E\u043A\u0443\u043F\u043A\u0430 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u0430."
+  - lang:
+    - monitor_not_enough_coins
+    - "\uCF54\uC778\uC774 \uBD80\uC871\uD569\uB2C8\uB2E4."
+    - Not enough coins.
+    - "\u91D1\u5E63\u4E0D\u8DB3\u3002"
+    - "\u30B3\u30A4\u30F3\u304C\u8DB3\u308A\u307E\u305B\u3093\u3002"
+    - "Nicht genug M\xFCnzen."
+    - "\u041D\u0435\u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E \u043C\u043E\u043D\u0435\u0442."
+  - lang:
+    - monitor_not_enough_resources
+    - "\uC790\uC6D0\uC774 \uBD80\uC871\uD569\uB2C8\uB2E4."
+    - Not enough resources.
+    - "\u8CC7\u6E90\u4E0D\u8DB3\u3002"
+    - "\u8CC7\u6E90\u304C\u8DB3\u308A\u307E\u305B\u3093\u3002"
+    - Nicht genug Ressourcen.
+    - "\u041D\u0435\u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E \u0440\u0435\u0441\u0443\u0440\u0441\u043E\u0432."
+  - lang:
+    - monitor_island_conquered
+    - "{0}\uBC88 \uC12C\uC744 \uC815\uBCF5\uD588\uB2E4"
+    - Island {0} conquered
+    - "\u5F81\u670D\u4E86\u7B2C {0} \u5EA7\u5CF6"
+    - "\u5CF6 {0} \u3092\u5F81\u670D\u3057\u307E\u3057\u305F"
+    - Insel {0} erobert
+    - "\u041E\u0441\u0442\u0440\u043E\u0432 {0} \u0437\u0430\u0445\u0432\u0430\u0447\u0435\u043D!"
+  - lang:
+    - monitor_fishing_success
+    - "\uB09A\uC2DC \uC131\uACF5"
+    - Fishing successful
+    - "\u91E3\u9B5A\u6210\u529F"
+    - "\u91E3\u308A\u306B\u6210\u529F\u3057\u307E\u3057\u305F"
+    - Fischen erfolgreich
+    - "\u0423\u043B\u043E\u0432 \u043F\u043E\u043B\u0443\u0447\u0435\u043D!"
+  - lang:
+    - monitor_revival_success
+    - "\uC7AC\uC0DD\uC131 \uC131\uACF5"
+    - Revival successful
+    - "\u5FA9\u6D3B\u6210\u529F"
+    - "\u5FA9\u6D3B\u3057\u307E\u3057\u305F"
+    - Wiederbelebung erfolgreich
+    - "\u041A\u043E\u0440\u0430\u0431\u043B\u044C \u0432\u043E\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D."
+  - lang:
+    - monitor_parking
+    - "\uC8FC\uCC28\uC911"
+    - Parking
+    - "\u505C\u6CCA\u4E2D"
+    - "\u505C\u6CCA\u4E2D"
+    - Anlegen
+    - "\u041A\u043E\u0440\u0430\u0431\u043B\u044C \u043F\u0440\u0438\u0448\u0432\u0430\u0440\u0442\u043E\u0432\u0430\u043D."
+  - lang:
+    - monitor_auto_sailing_started
+    - "\uC790\uB3D9\uD56D\uD574 \uC2DC\uC791"
+    - Autopilot started
+    - "\u81EA\u52D5\u822A\u884C\u5DF2\u958B\u59CB"
+    - "\u81EA\u52D5\u822A\u884C\u3092\u958B\u59CB\u3057\u307E\u3057\u305F"
+    - Autopilot gestartet
+    - "\u0410\u0432\u0442\u043E\u043F\u0438\u043B\u043E\u0442 \u0432\u043A\u043B\u044E\u0447\u0451\u043D."
+  - lang:
+    - monitor_enemy_destroyed
+    - "\uC801 \uD30C\uAD34"
+    - Enemy destroyed
+    - "\u6575\u4EBA\u5DF2\u6467\u6BC0"
+    - "\u6575\u3092\u6483\u7834\u3057\u307E\u3057\u305F"
+    - "Gegner zerst\xF6rt"
+    - "\u0412\u0440\u0430\u0433 \u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0435\u043D!"
+  - lang:
+    - monitor_island_reward_received
+    - "\uC7A5\uC545\uBCF4\uC0C1 \uC218\uB839"
+    - Island capture reward received
+    - "\u5DF2\u9818\u53D6\u4F54\u9818\u734E\u52F5"
+    - "\u5CF6\u306E\u5360\u9818\u5831\u916C\u3092\u53D7\u3051\u53D6\u308A\u307E\u3057\u305F"
+    - Eroberungsbelohnung erhalten
+    - "\u041F\u043E\u043B\u0443\u0447\u0435\u043D\u0430 \u043D\u0430\u0433\u0440\u0430\u0434\u0430
+      \u0437\u0430 \u0437\u0430\u0445\u0432\u0430\u0442 \u043E\u0441\u0442\u0440\u043E\u0432\u0430."
+  - lang:
+    - monitor_not_enough_owned_items
+    - "\uC18C\uC720\uD55C \uBB3C\uAC74\uC774 \uBD80\uC871\uD569\uB2C8\uB2E4."
+    - Not enough owned items.
+    - "\u6301\u6709\u7269\u54C1\u4E0D\u8DB3\u3002"
+    - "\u6240\u6301\u30A2\u30A4\u30C6\u30E0\u304C\u8DB3\u308A\u307E\u305B\u3093\u3002"
+    - "Nicht genug eigene Gegenst\xE4nde."
+    - "\u041D\u0435\u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
+  - lang:
+    - monitor_market_refreshed
+    - "\uB9C8\uCF13\uCD08\uAE30\uD654"
+    - Market refreshed
+    - "\u5E02\u5834\u5DF2\u5237\u65B0"
+    - "\u30DE\u30FC\u30B1\u30C3\u30C8\u3092\u66F4\u65B0\u3057\u307E\u3057\u305F"
+    - Markt aktualisiert
+    - "\u0422\u043E\u0432\u0430\u0440\u044B \u043D\u0430 \u0440\u044B\u043D\u043A\u0435
+      \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u044B."
+  - lang:
+    - monitor_resolution
+    - "\uD574\uC0C1\uB3C4 : {0}x{1}"
+    - 'Resolution: {0}x{1}'
+    - "\u89E3\u6790\u5EA6\uFF1A{0}x{1}"
+    - "\u89E3\u50CF\u5EA6: {0}x{1}"
+    - "Aufl\xF6sung: {0}x{1}"
+    - "\u0420\u0430\u0437\u0440\u0435\u0448\u0435\u043D\u0438\u0435 \u044D\u043A\u0440\u0430\u043D\u0430:
+      {0} \xD7 {1}"
+  - lang:
+    - monitor_low_quality_resolution
+    - "\uC800\uC0AC\uC591 \uBAA8\uB4DC -> \uD574\uC0C1\uB3C4 : {0}x{1}"
+    - 'Low quality mode -> resolution: {0}x{1}'
+    - "\u4F4E\u756B\u8CEA\u6A21\u5F0F -> \u89E3\u6790\u5EA6\uFF1A{0}x{1}"
+    - "\u4F4E\u753B\u8CEA\u30E2\u30FC\u30C9 -> \u89E3\u50CF\u5EA6: {0}x{1}"
+    - "Niedrige Qualit\xE4t -> Aufl\xF6sung: {0}x{1}"
+    - "\u041D\u0438\u0437\u043A\u043E\u0435 \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u043E
+      \u0433\u0440\u0430\u0444\u0438\u043A\u0438. \u0420\u0430\u0437\u0440\u0435\u0448\u0435\u043D\u0438\u0435:
+      {0} \xD7 {1}"
   - lang:
     - tip3
-    - 업데이트는 계속 됩니다. 많은 응원 부탁드립니다.
-    - The update will continue. Please encourage us a lot.
-    - 更新將繼續。 請鼓勵我們很多。
-    - アップデートは続きます。 多くの応援お願いします。
-    - Das Update wird fortgesetzt. Vielen Dank für Ihre Unterstützung.
-    - "Обновление будет продолжено. Пожалуйста  поощряйте нас много.\r"
+    - "\uC0C8\uB85C\uC6B4 \uC12C\uC744 \uCC3E\uC544 \uBA3C \uBC14\uB2E4\uB85C \uB098\uC544\uAC00\uC138\uC694."
+    - Sail farther to discover new islands.
+    - "\u99DB\u5411\u9060\u6D77\uFF0C\u63A2\u7D22\u65B0\u7684\u5CF6\u5DBC\u3002"
+    - "\u9060\u304F\u306E\u6D77\u3078\u9032\u307F\u3001\u65B0\u3057\u3044\u5CF6\u3092\u898B\u3064\u3051\u307E\u3057\u3087\u3046\u3002"
+    - Fahre weiter hinaus und entdecke neue Inseln.
+    - "\u041F\u043B\u044B\u0432\u0438\u0442\u0435 \u0434\u0430\u043B\u044C\u0448\u0435,
+      \u0447\u0442\u043E\u0431\u044B \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u043D\u043E\u0432\u044B\u0435
+      \u043E\u0441\u0442\u0440\u043E\u0432\u0430."
   - lang:
     - cloud_overwrite
-    - 클라우드 데이터에 덮어쓰겠습니까?
+    - "\uD074\uB77C\uC6B0\uB4DC \uB370\uC774\uD130\uC5D0 \uB36E\uC5B4\uC4F0\uACA0\uC2B5\uB2C8\uAE4C?"
     - Overwrite cloud data. Continue?
-    - 重寫雲端數據。繼續？
-    - クラウドデータに上書きか?
-    - Cloud-Daten überschreiben. Fortsetzen?
-    - "Перепишите данные облака. Продолжить?\r"
+    - "\u91CD\u5BEB\u96F2\u7AEF\u6578\u64DA\u3002\u7E7C\u7E8C\uFF1F"
+    - "\u30AF\u30E9\u30A6\u30C9\u30C7\u30FC\u30BF\u306B\u4E0A\u66F8\u304D\u304B?"
+    - "Cloud-Daten \xFCberschreiben. Fortsetzen?"
+    - "\u041F\u0435\u0440\u0435\u0437\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0435
+      \u0432 \u043E\u0431\u043B\u0430\u043A\u0435 \u0434\u0430\u043D\u043D\u044B\u043C\u0438
+      \u044D\u0442\u043E\u0439 \u0438\u0433\u0440\u044B?"
   - lang:
     - seagull
-    - 갈매기
+    - "\uAC08\uB9E4\uAE30"
     - Seagull
-    - 海鷗
-    - カモメ
-    - Möwe
-    - "чайка\r"
+    - "\u6D77\u9DD7"
+    - "\u30AB\u30E2\u30E1"
+    - "M\xF6we"
+    - "\u0427\u0430\u0439\u043A\u0430"
   - lang:
     - heal
-    - 회복
+    - "\uD68C\uBCF5"
     - Recovery
-    - 恢復
-    - 回復
+    - "\u6062\u5FA9"
+    - "\u56DE\u5FA9"
     - Heilung
-    - Recovery
+    - "\u0420\u0435\u043C\u043E\u043D\u0442"
+  - lang:
+    - h
+    - "\uC2DC\uAC04"
+    - h
+    - "\u5C0F\u6642"
+    - "\u6642\u9593"
+    - Std.
+    - "\u0447"
+  - lang:
+    - min
+    - "\uBD84"
+    - min
+    - "\u5206"
+    - "\u5206"
+    - Min.
+    - "\u043C\u0438\u043D"
   currentLangNum: 0
 --- !u!114 &72
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: e2b371c891ed8464a9020623bb348b46, type: 2}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6523,17 +6894,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &73
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
@@ -6542,14 +6916,15 @@ MonoBehaviour:
 --- !u!114 &74
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
@@ -6563,14 +6938,15 @@ MonoBehaviour:
 --- !u!114 &75
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
     m_SelectOnUp: {fileID: 0}
@@ -6582,17 +6958,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 76}
@@ -6607,28 +6986,28 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &76
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6637,24 +7016,27 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &77
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d8ff3840591bbc948a07dd24e899aaf6, type: 3}
     m_FontSize: 18
@@ -6672,33 +7054,35 @@ MonoBehaviour:
 --- !u!114 &78
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce6a43f61174cb45a98b43bde2c231e2, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   id: warning
 --- !u!114 &79
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d8ff3840591bbc948a07dd24e899aaf6, type: 3}
     m_FontSize: 50
@@ -6716,33 +7100,35 @@ MonoBehaviour:
 --- !u!114 &80
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce6a43f61174cb45a98b43bde2c231e2, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   id: touchstart
 --- !u!114 &81
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
@@ -6760,14 +7146,15 @@ MonoBehaviour:
 --- !u!114 &82
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd6651b3cdda5bcca891b7122fd40339, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   img: {fileID: 83}
   load: {fileID: 88}
   img2: {fileID: 72}
@@ -6775,21 +7162,22 @@ MonoBehaviour:
 --- !u!114 &83
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6798,71 +7186,78 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &84
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ed3b718b39f67753833e1a62e674c05, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &85
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2055ecd01cfa861e5a03c6aa263703eb, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   DevUrl: https://adev.stage31.net/v3/receipt/validation
 --- !u!114 &86
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb682a11d459e82cc0e97bd159d1cfd5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &87
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 15}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7ef1777a0f205b5d4ca7c0aacb7c42c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   currentfps: 30
   Show: 0
 --- !u!114 &88
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d8ff3840591bbc948a07dd24e899aaf6, type: 3}
     m_FontSize: 58
@@ -6880,21 +7275,22 @@ MonoBehaviour:
 --- !u!114 &89
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6903,17 +7299,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &90
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -6924,14 +7323,15 @@ MonoBehaviour:
 --- !u!114 &91
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61b7e426da55d77dd42acc1c9419ad56, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   DayTime: 300
   localT: 293.7533
   nightDayColor:
@@ -7003,14 +7403,15 @@ MonoBehaviour:
 --- !u!114 &92
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e42ecb7f38624f66021566c40d97ef0, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   waterMode: 2
   disablePixelLights: 1
   textureSize: 1024
@@ -7024,14 +7425,15 @@ MonoBehaviour:
 --- !u!114 &93
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
     m_SelectOnUp: {fileID: 0}
@@ -7043,17 +7445,20 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 94}
@@ -7068,28 +7473,28 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &94
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -7098,3 +7503,5 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1

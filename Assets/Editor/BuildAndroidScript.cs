@@ -11,6 +11,9 @@ public static class BuildAndroidScript
 	{
 		try
 		{
+			bool fastIterationBuild = string.Equals(Environment.GetEnvironmentVariable("DOKDO_FAST_BUILD"), "1", StringComparison.Ordinal);
+			Il2CppCompilerConfiguration il2CppConfiguration = fastIterationBuild ? Il2CppCompilerConfiguration.Debug : Il2CppCompilerConfiguration.Release;
+			Debug.Log("[BUILD] mode=" + (fastIterationBuild ? "fast-iteration" : "release") + " il2cpp=" + il2CppConfiguration);
 			EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTargetGroup.Android, BuildTarget.Android);
 
 			PlayerSettings.companyName = "Zzoo";
@@ -21,6 +24,8 @@ public static class BuildAndroidScript
 
 			PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
 			PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
+			PlayerSettings.SetIncrementalIl2CppBuild(BuildTargetGroup.Android, true);
+			PlayerSettings.SetIl2CppCompilerConfiguration(BuildTargetGroup.Android, il2CppConfiguration);
 			PlayerSettings.SetManagedStrippingLevel(BuildTargetGroup.Android, ManagedStrippingLevel.Disabled);
 			PlayerSettings.SetApiCompatibilityLevel(BuildTargetGroup.Android, ApiCompatibilityLevel.NET_4_6);
 
@@ -63,8 +68,8 @@ public static class BuildAndroidScript
 			PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.Android, iconTextures);
 			Debug.Log("[BUILD] icon slots: " + string.Join(",", System.Array.ConvertAll(iconSizes, x => x.ToString())));
 
-			EditorUserBuildSettings.development = false;
-			EditorUserBuildSettings.allowDebugging = false;
+			EditorUserBuildSettings.development = fastIterationBuild;
+			EditorUserBuildSettings.allowDebugging = fastIterationBuild;
 			EditorUserBuildSettings.buildAppBundle = false;
 
 			List<string> scenes = new List<string>();
@@ -85,7 +90,7 @@ public static class BuildAndroidScript
 				scenes = scenes.ToArray(),
 				locationPathName = outPath,
 				target = BuildTarget.Android,
-				options = BuildOptions.None
+				options = fastIterationBuild ? BuildOptions.Development : BuildOptions.None
 			};
 
 			BuildReport report = BuildPipeline.BuildPlayer(opts);

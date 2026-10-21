@@ -62,6 +62,12 @@ public class FloatingObject : MonoBehaviour
 
 	private void OnEnable()
 	{
+		if (isAds)
+		{
+			// AD REMOVAL: Never animate or expose the ad-only floating pickup.
+			base.gameObject.SetActive(false);
+			return;
+		}
 		tempPos = myT.position;
 		tempPos.y = 0f;
 		localT = DisappearTime;
@@ -134,7 +140,8 @@ public class FloatingObject : MonoBehaviour
 		});
 		if (isAds)
 		{
-			GameObject.Find("Panel_Ask").GetComponent<Panel_AskAds>().Show();
+			// AD REMOVAL: Discard the ad-only floating pickup instead of opening its video-ad prompt.
+			base.gameObject.SetActive(false);
 		}
 		else
 		{

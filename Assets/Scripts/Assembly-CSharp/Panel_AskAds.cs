@@ -14,18 +14,12 @@ public class Panel_AskAds : MonoBehaviour
 
 	public void Show()
 	{
-		Parent.SetActive(true);
-		BG.DOKill();
-		popup.DOKill();
-		BG.DOFade(0f, 0f);
-		BG.DOFade(0.5f, 0.5f).SetDelay(1f);
-		popup.localScale = Vector3.zero;
-		popup.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack).SetDelay(1f)
-			.OnComplete(() =>
-			{
-				Time.timeScale = 0f;
-			});
-		coinLabel.text = (500 * (int)GameManager.Instance.Level_Body).ToString("N0");
+		// AD REMOVAL: Keep legacy scene callbacks safe without displaying or pausing for an ad offer.
+		Time.timeScale = 1f;
+		if (Parent != null)
+		{
+			Parent.SetActive(false);
+		}
 	}
 
 	public void Close()

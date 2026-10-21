@@ -9,8 +9,6 @@ public class Localization : MonoBehaviour
 
 	private LocalizeManager LM;
 
-	private string str;
-
 	private void Awake()
 	{
 		label = GetComponent<Text>();
@@ -19,7 +17,20 @@ public class Localization : MonoBehaviour
 
 	private void OnEnable()
 	{
-		LM.localized.TryGetValue(id, out str);
-		label.text = str;
+		Refresh();
+	}
+
+	public void Refresh()
+	{
+		if (label == null)
+		{
+			label = GetComponent<Text>();
+		}
+		LM = LocalizeManager.Instance;
+		if (LM == null || label == null)
+		{
+			return;
+		}
+		label.text = LM.translate(id);
 	}
 }

@@ -131,10 +131,7 @@ public class IslandMenu : MonoBehaviour
 	private void OnEnable()
 	{
 		EventManager.StartListening(MyEvent.Upgrade, someListener);
-		for (int i = 0; i < RepairMenu.Length; i++)
-		{
-			RepairMenu[i].SetActive(false);
-		}
+		SetRepairMenuActive(false);
 		if (!GM.isTuto)
 		{
 			GM.isTuto = true;
@@ -204,10 +201,7 @@ public class IslandMenu : MonoBehaviour
 		else
 		{
 			timer = 0f;
-			for (int i = 0; i < RepairMenu.Length; i++)
-			{
-				RepairMenu[i].SetActive(false);
-			}
+			SetRepairMenuActive(false);
 		}
 		for (int j = 0; j < RepairMenu.Length; j++)
 		{
@@ -295,17 +289,11 @@ public class IslandMenu : MonoBehaviour
 		}
 		if ((int)GM.MyCurrnetHP >= (int)GM.MyHP())
 		{
-			for (int j = 0; j < RepairMenu.Length; j++)
-			{
-				RepairMenu[j].SetActive(false);
-			}
+			SetRepairMenuActive(false);
 		}
 		else
 		{
-			for (int k = 0; k < RepairMenu.Length; k++)
-			{
-				RepairMenu[k].SetActive(true);
-			}
+			SetRepairMenuActive(true);
 		}
 		dailyCheck();
 	}
@@ -320,6 +308,27 @@ public class IslandMenu : MonoBehaviour
 			{
 				appearMenu[i].SetActive(true);
 			});
+		}
+	}
+
+	private void SetRepairMenuActive(bool active)
+	{
+		for (int i = 0; i < RepairMenu.Length; i++)
+		{
+			if (RepairMenu[i] == null)
+			{
+				continue;
+			}
+
+			// AD REMOVAL: Keep the repair status panel, while ad-only prompts stay hidden.
+			SendAdsEvent adEvent = RepairMenu[i].GetComponent<SendAdsEvent>();
+			if (adEvent != null && !adEvent.IsRepairStatus)
+			{
+				RepairMenu[i].SetActive(false);
+				continue;
+			}
+
+			RepairMenu[i].SetActive(active);
 		}
 	}
 

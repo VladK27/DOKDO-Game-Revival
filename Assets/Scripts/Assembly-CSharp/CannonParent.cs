@@ -24,14 +24,22 @@ public class CannonParent : MonoBehaviour
 
 	private void Update()
 	{
-		for (int i = 0; i < cannonsL.Length; i++)
+		for (int i = 0; cannonsL != null && i < cannonsL.Length; i++)
 		{
+			if (cannonsL[i] == null)
+			{
+				continue;
+			}
 			Vector3 eulerAngles = cannonsL[i].eulerAngles;
 			eulerAngles.x = -20f;
 			cannonsL[i].eulerAngles = eulerAngles;
 		}
-		for (int j = 0; j < cannonsR.Length; j++)
+		for (int j = 0; cannonsR != null && j < cannonsR.Length; j++)
 		{
+			if (cannonsR[j] == null)
+			{
+				continue;
+			}
 			Vector3 eulerAngles2 = cannonsR[j].eulerAngles;
 			eulerAngles2.x = -20f;
 			cannonsR[j].eulerAngles = eulerAngles2;

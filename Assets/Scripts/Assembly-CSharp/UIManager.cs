@@ -105,14 +105,15 @@ public class UIManager : MonoBehaviour
 
 	private string tTOhm(int t)
 	{
-		string empty = string.Empty;
+		string h = LocalizeManager.Instance.translate("h");
+		string min = LocalizeManager.Instance.translate("min");
 		if (t >= 60)
 		{
 			int num = Mathf.FloorToInt((float)t / 60f);
 			int num2 = t - num * 60;
-			return num + "h " + num2 + "min";
+			return num + h + " " + num2 + min;
 		}
-		return t + "min";
+		return t + min;
 	}
 
 	private void Start()
